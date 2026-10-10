@@ -6,6 +6,8 @@ It runs entirely in the browser with **mock data** and **no backend**, in
 
 > Demo version. Sample data only.
 
+**Live demo:** https://amirsam-hp021.github.io/apameh-school-demo/
+
 ## Run it
 
 Requirements: Node.js 18 or newer.
@@ -23,6 +25,7 @@ Other scripts:
 |---|---|
 | `npm run build` | Production build into `dist/` |
 | `npm run preview` | Serve the production build locally |
+| `npm run deploy` | Build and publish the demo to GitHub Pages (`gh-pages` branch) |
 | `npm run check:i18n` | Verify every translation key used in the code exists in both `en.json` and `fa.json` |
 
 ## Demo accounts
