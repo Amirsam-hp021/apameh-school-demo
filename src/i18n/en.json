@@ -1,0 +1,702 @@
+{
+  "app": {
+    "name": "Apameh English Academy",
+    "shortName": "Apameh Academy",
+    "documentTitle": "Apameh English Academy · Demo"
+  },
+  "demo": {
+    "banner": "Demo version. Sample data only.",
+    "sidebarNote": "This is a demo. Changes reset when you reload the page."
+  },
+  "language": {
+    "label": "Language"
+  },
+  "roles": {
+    "admin": "Super Admin",
+    "teacher": "Teacher",
+    "student": "Student",
+    "parent": "Parent"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "openMenu": "Open menu",
+    "dashboard": "Dashboard",
+    "overview": "Overview",
+    "users": "Users",
+    "classes": "Classes",
+    "myClasses": "My Classes",
+    "payments": "Payments",
+    "announcements": "Announcements",
+    "auditLogs": "Audit Logs",
+    "settings": "Settings",
+    "backups": "Backups",
+    "grading": "Grading",
+    "materials": "Materials",
+    "assignments": "Assignments",
+    "grades": "Grades",
+    "timetable": "Timetable",
+    "notifications": "Notifications",
+    "forum": "Forum",
+    "attendance": "Attendance",
+    "deadlines": "Deadlines"
+  },
+  "common": {
+    "welcomeBack": "Welcome back, {{name}}.",
+    "viewAll": "View all",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "save": "Save",
+    "saveChanges": "Save changes",
+    "saving": "Saving…",
+    "processing": "Processing…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "done": "Done",
+    "reset": "Reset",
+    "resetFilters": "Reset filters",
+    "retry": "Try again",
+    "download": "Download",
+    "actions": "Actions",
+    "all": "All",
+    "allClasses": "All classes",
+    "class": "Class",
+    "student": "Student",
+    "teacher": "Teacher",
+    "assignment": "Assignment",
+    "status": "Status",
+    "yes": "Yes",
+    "no": "No",
+    "days": "days",
+    "previous": "Previous",
+    "next": "Next",
+    "showing": "Showing {{from}}–{{to}} of {{total}}",
+    "pageOf": "Page {{page}} of {{pages}}",
+    "noResults": "No results",
+    "noResultsHint": "Try changing your search or filters.",
+    "loadError": "Something went wrong while loading this data.",
+    "moneyValue": "{{amount}} Toman",
+    "listSeparator": ", ",
+    "demoDownload": "Download is simulated in the demo."
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Enter a valid email address."
+  },
+  "status": {
+    "verified": "Verified",
+    "pending": "Pending",
+    "failed": "Failed",
+    "expired": "Expired",
+    "draft": "Draft",
+    "published": "Published",
+    "closed": "Closed",
+    "not_submitted": "Not submitted",
+    "submitted": "Submitted",
+    "late": "Late",
+    "reviewed": "Reviewed",
+    "returned": "Returned",
+    "active": "Active",
+    "inactive": "Inactive",
+    "suspended": "Suspended",
+    "completed": "Completed",
+    "in_progress": "In progress",
+    "present": "Present",
+    "absent": "Absent"
+  },
+  "audiences": {
+    "all": "Everyone",
+    "students": "Students",
+    "teachers": "Teachers",
+    "parents": "Parents"
+  },
+  "fileTypes": {
+    "pdf": "PDF",
+    "doc": "Word",
+    "image": "Image",
+    "audio": "Audio",
+    "video": "Video"
+  },
+  "upload": {
+    "dropHere": "Drag and drop files here, or",
+    "browse": "browse",
+    "errors": {
+      "type": "\"{{name}}\" is not an allowed file type.",
+      "size": "\"{{name}}\" is larger than the {{limit}} MB limit."
+    }
+  },
+  "search": {
+    "placeholder": "Search students, classes, materials…",
+    "searching": "Searching…",
+    "noResults": "No results for \"{{query}}\".",
+    "groups": {
+      "students": "Students",
+      "classes": "Classes",
+      "materials": "Materials",
+      "assignments": "Assignments"
+    }
+  },
+  "landing": {
+    "eyebrow": "School management system · Live demo",
+    "title": "Run your English school from one simple place",
+    "intro": "Classes, assignments, grading, attendance, payments and parent updates, all in one bilingual platform for administrators, teachers, students and parents.",
+    "enterDemo": "Enter Demo",
+    "featuresTitle": "Everything your school needs",
+    "featuresSubtitle": "Each role gets its own focused workspace.",
+    "footer": "© {{year}} Apameh English Academy. Demo with sample data.",
+    "stats": {
+      "roles": {
+        "label": "User roles",
+        "value": "4"
+      },
+      "languages": {
+        "label": "Languages",
+        "value": "EN / FA"
+      },
+      "modules": {
+        "label": "Modules",
+        "value": "15+"
+      },
+      "backend": {
+        "label": "Backend",
+        "value": "Mock data"
+      }
+    },
+    "features": {
+      "roles": {
+        "title": "Role-based access",
+        "text": "Separate dashboards for Super Admin, teachers, students and parents."
+      },
+      "assignments": {
+        "title": "Assignments and grading",
+        "text": "Create assignments, collect files and grade with live weighted totals."
+      },
+      "timetable": {
+        "title": "Timetable",
+        "text": "A weekly calendar with classes and deadlines for every student."
+      },
+      "payments": {
+        "title": "Payments",
+        "text": "Track tuition payments with clear statuses and an online pay flow."
+      },
+      "forum": {
+        "title": "Class forums",
+        "text": "Per-class discussion boards with teacher moderation."
+      },
+      "reports": {
+        "title": "Reports",
+        "text": "Revenue, attendance and grade overviews at a glance."
+      },
+      "bilingual": {
+        "title": "English and Farsi",
+        "text": "Full right-to-left layout and Persian font when Farsi is selected."
+      },
+      "security": {
+        "title": "Audit and backups",
+        "text": "Audit logs of key actions and one-click backups."
+      }
+    }
+  },
+  "auth": {
+    "title": "Choose a demo account",
+    "subtitle": "Explore the system from each user's point of view.",
+    "noPassword": "No password needed. Every account uses sample data.",
+    "loginAs": "Log in as {{name}}",
+    "logout": "Log out",
+    "switchRole": "Demo: switch role",
+    "current": "Current",
+    "roleDescriptions": {
+      "admin": "Users, payments, announcements, audit logs, settings and backups.",
+      "teacher": "Classes, materials, assignments, grading, attendance and forums.",
+      "student": "Classes, assignments, grades, timetable and notifications.",
+      "parent": "Read-only view of a child's grades, attendance and deadlines."
+    },
+    "demoNames": {
+      "admin": "Maryam Karimi",
+      "teacher": "David Miller",
+      "student": "Sara Ahmadi",
+      "parent": "Hamid Ahmadi"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home",
+    "backToDashboard": "Back to dashboard"
+  },
+  "audit": {
+    "actions": {
+      "login": "signed in",
+      "logout": "signed out",
+      "login_failed": "failed sign-in attempt",
+      "user_create": "created a user",
+      "user_update": "updated a user",
+      "payment_verify": "verified a payment",
+      "payment_failed": "had a failed payment",
+      "grade_update": "updated grades",
+      "assignment_create": "created an assignment",
+      "assignment_submit": "submitted an assignment",
+      "material_upload": "uploaded material",
+      "announcement_create": "published an announcement",
+      "settings_update": "changed settings",
+      "backup_create": "created a backup"
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Dashboard",
+      "totalStudents": "Total students",
+      "totalTeachers": "Teachers",
+      "activeClasses": "Active classes",
+      "paymentsThisMonth": "Payments this month",
+      "failedPayments": "Failed payments",
+      "verifiedCount": "{{n}} verified payments",
+      "pendingCount": "{{n}} pending",
+      "revenueTitle": "Monthly revenue",
+      "revenueSubtitle": "Verified payments over the last 12 months",
+      "revenueChartLabel": "Bar chart of verified revenue per month for the last 12 months",
+      "recentActivity": "Recent activity",
+      "noActivity": "No recent activity"
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Manage administrators, teachers, students and parents.",
+      "addUser": "Add user",
+      "editUser": "Edit user",
+      "bulkImport": "Bulk import",
+      "searchPlaceholder": "Search by name, email or phone",
+      "filterRole": "Filter by role",
+      "filterStatus": "Filter by status",
+      "allRoles": "All roles",
+      "allStatuses": "All statuses",
+      "empty": "No users found",
+      "created": "User created.",
+      "updated": "User updated.",
+      "columns": {
+        "name": "Name",
+        "role": "Role",
+        "phone": "Phone",
+        "status": "Status",
+        "joined": "Joined"
+      },
+      "fields": {
+        "nameEn": "Full name (English)",
+        "nameFa": "Full name (Farsi)",
+        "email": "Email",
+        "phone": "Phone",
+        "role": "Role",
+        "status": "Status"
+      },
+      "import": {
+        "title": "Bulk import users",
+        "description": "Upload a CSV or Excel file with one user per row. In the demo, the file is not processed.",
+        "hint": "CSV or XLSX",
+        "invalidType": "Please choose a .csv or .xlsx file.",
+        "start": "Import",
+        "template": "Download template",
+        "demoDone": "Import is UI only in the demo. No users were added."
+      }
+    },
+    "payments": {
+      "title": "Payments",
+      "subtitle": "Tuition payments and their verification status.",
+      "searchPlaceholder": "Search by student or reference",
+      "empty": "No payments found",
+      "totalVerified": "Verified total",
+      "totalPending": "Pending total",
+      "pendingHint": "{{n}} payments awaiting verification",
+      "failedOrExpired": "Failed or expired",
+      "verify": "Verify",
+      "verified": "Payment marked as verified.",
+      "pay": "Pay",
+      "payTitle": "Online payment (demo)",
+      "amountDue": "Amount due",
+      "demoNotice": "Demo only: no real payment gateway is contacted and no money is charged. Choose an outcome to simulate.",
+      "simulateSuccess": "Simulate success",
+      "simulateFailure": "Simulate failure",
+      "processing": "Processing payment…",
+      "processingHint": "Contacting the demo gateway",
+      "successTitle": "Payment successful",
+      "successText": "The payment has been verified.",
+      "failureTitle": "Payment failed",
+      "failureText": "The demo gateway declined the payment.",
+      "columns": {
+        "reference": "Reference",
+        "student": "Student",
+        "class": "Class",
+        "amount": "Amount",
+        "method": "Method",
+        "date": "Date",
+        "status": "Status"
+      },
+      "methods": {
+        "online": "Online",
+        "card": "Card transfer",
+        "cash": "Cash"
+      }
+    },
+    "announcements": {
+      "title": "Announcements",
+      "subtitle": "Share news with everyone or with one group.",
+      "create": "New announcement",
+      "list": "Published announcements",
+      "publish": "Publish",
+      "published": "Announcement published.",
+      "deleted": "Announcement deleted.",
+      "fields": {
+        "title": "Title",
+        "body": "Message",
+        "audience": "Audience"
+      }
+    },
+    "audit": {
+      "title": "Audit logs",
+      "subtitle": "A record of important actions in the system.",
+      "allActions": "All actions",
+      "allUsers": "All users",
+      "from": "From",
+      "to": "To",
+      "empty": "No log entries match these filters",
+      "columns": {
+        "date": "Date",
+        "user": "User",
+        "action": "Action",
+        "ip": "IP address"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "School details and grading defaults.",
+      "demoNotice": "You can edit every field, but changes are not saved in the demo.",
+      "general": "General",
+      "schoolNameEn": "School name (English)",
+      "schoolNameFa": "School name (Farsi)",
+      "email": "Contact email",
+      "phone": "Phone",
+      "academicYear": "Academic year",
+      "currency": "Currency",
+      "currencies": {
+        "IRT": "Iranian Toman",
+        "IRR": "Iranian Rial"
+      },
+      "gradeWeights": "Grade weight defaults",
+      "gradeWeightsHint": "Used to calculate each student's weighted final grade.",
+      "weightTotal": "Total: {{total}}%",
+      "weightMustBe100": "Weights must add up to 100%.",
+      "notSaved": "Demo: settings look saved, but nothing was stored."
+    },
+    "backups": {
+      "title": "Backups",
+      "subtitle": "Automatic daily backups and manual snapshots.",
+      "create": "Create backup",
+      "creating": "Creating backup…",
+      "created": "Backup created successfully (demo).",
+      "empty": "No backups yet",
+      "columns": {
+        "name": "File",
+        "type": "Type",
+        "date": "Created",
+        "size": "Size",
+        "status": "Status"
+      },
+      "types": {
+        "automatic": "Automatic",
+        "manual": "Manual"
+      }
+    }
+  },
+  "announcements": {
+    "title": "Announcements",
+    "subtitle": "News and updates from the school.",
+    "empty": "No announcements yet"
+  },
+  "classes": {
+    "myTitle": "My classes",
+    "allTitle": "All classes",
+    "subtitle": "Schedules, students and progress for each class.",
+    "empty": "No classes yet",
+    "noStudents": "No students in this class",
+    "studentCount": "{{n}} students",
+    "room": "Room {{room}}",
+    "courseProgress": "Course progress",
+    "attendanceRate": "Attendance",
+    "backToClasses": "Back to classes",
+    "tabs": {
+      "students": "Students",
+      "materials": "Materials",
+      "assignments": "Assignments",
+      "attendance": "Attendance",
+      "grades": "Grades",
+      "forum": "Forum"
+    }
+  },
+  "materials": {
+    "uploadTitle": "Upload materials",
+    "uploadHint": "PDF up to {{pdf}} MB, images up to {{image}} MB, video up to {{video}} MB",
+    "demoNote": "Demo: upload progress is simulated and files are not stored.",
+    "listTitle": "Class materials",
+    "empty": "No materials yet",
+    "emptyHint": "Upload PDFs, videos or images for your students.",
+    "uploaded": "\"{{name}}\" uploaded.",
+    "deleted": "Material removed.",
+    "downloadStarted": "Downloading \"{{name}}\" (demo)."
+  },
+  "assignments": {
+    "new": "New assignment",
+    "empty": "No assignments yet",
+    "emptyHintTeacher": "Create the first assignment for this class.",
+    "publish": "Publish",
+    "close": "Close",
+    "viewSubmissions": "Submissions",
+    "toReview": "{{n}} to review",
+    "maxSize": "Max {{n}} MB",
+    "savedDraft": "Assignment saved as draft.",
+    "publishedMsg": "Assignment published.",
+    "statusChanged": {
+      "published": "Assignment published.",
+      "closed": "Assignment closed."
+    },
+    "columns": {
+      "title": "Title",
+      "due": "Due date",
+      "status": "Status",
+      "submissions": "Submissions",
+      "late": "Late allowed"
+    },
+    "form": {
+      "title": "Create assignment",
+      "saveDraft": "Save as draft",
+      "publish": "Publish",
+      "pickType": "Choose at least one file type.",
+      "sizeRange": "Enter a size between 1 and 500 MB.",
+      "allowLateHint": "Students can still submit after the due date. Their work is marked as late.",
+      "fields": {
+        "title": "Title",
+        "description": "Description",
+        "dueDate": "Due date",
+        "allowedTypes": "Allowed file types",
+        "maxSize": "Max file size (MB)",
+        "allowLate": "Allow late submission"
+      }
+    }
+  },
+  "attendance": {
+    "date": "Date",
+    "markAllPresent": "Mark all present",
+    "save": "Save attendance",
+    "saved": "Attendance saved for {{date}}.",
+    "recorded": "Recorded",
+    "notRecorded": "Not recorded yet",
+    "markFor": "Attendance for {{name}}"
+  },
+  "grades": {
+    "components": {
+      "homework": "Homework",
+      "midterm": "Midterm",
+      "final": "Final"
+    },
+    "weightedFinal": "Weighted final",
+    "projected": "projected",
+    "partialExplain": "The final exam has not been graded yet, so the weighted grade is a projection from the available marks.",
+    "gradebookHint": "Homework is the average of graded assignments. Edit exam marks to update the weighted grade.",
+    "saved": "Grades saved.",
+    "empty": "No grades yet",
+    "viewFeedback": "Feedback",
+    "gradedOn": "Graded on {{date}}"
+  },
+  "submissions": {
+    "title": "Grading",
+    "subtitle": "Review student work and enter scores and feedback.",
+    "submittedAt": "Submitted",
+    "score": "Score",
+    "grade": "Grade",
+    "empty": "No submissions here",
+    "emptyHint": "Try another filter or class.",
+    "filters": {
+      "to_review": "To review",
+      "reviewed": "Reviewed",
+      "returned": "Returned",
+      "all": "All"
+    }
+  },
+  "grading": {
+    "back": "Back to submissions",
+    "submission": "Submission",
+    "openFile": "Open file",
+    "lateWarning": "This work was submitted after the due date.",
+    "yourGrade": "Score and feedback",
+    "score": "Score",
+    "scoreRange": "Enter a score from 0 to 100.",
+    "feedback": "Feedback",
+    "feedbackPlaceholder": "Write feedback for the student…",
+    "saveGrade": "Save grade",
+    "returnForRevision": "Return for revision",
+    "savedMsg": "Grade saved.",
+    "returnedMsg": "Returned to the student for revision.",
+    "liveTitle": "Weighted final grade",
+    "liveSubtitle": "Updates as you type",
+    "component": "Component",
+    "scoreCol": "Score",
+    "weight": "Weight",
+    "points": "Points",
+    "hwAverage": "Average of {{n}} assignments",
+    "partialNote": "Projected: final exam not graded yet",
+    "formula": "Final = Homework × {{hw}}% + Midterm × {{mid}}% + Final exam × {{fin}}%",
+    "previewTitle": "File preview",
+    "previewText": "In the demo, student files are not stored. The real system will open the uploaded file here."
+  },
+  "forum": {
+    "topics": "Topics",
+    "newTopic": "New topic",
+    "createTopic": "Create topic",
+    "topicTitle": "Title",
+    "topicBody": "Message",
+    "filterClass": "Filter by class",
+    "empty": "No topics yet",
+    "emptyHint": "Your teacher has not started any discussions in this class yet.",
+    "emptyHintTeacher": "Start a discussion for your students.",
+    "pinnedLabel": "Pinned",
+    "pin": "Pin topic",
+    "unpin": "Unpin topic",
+    "pinned": "Topic pinned.",
+    "unpinned": "Topic unpinned.",
+    "topicCreated": "Topic created.",
+    "topicDeleted": "Topic deleted.",
+    "replyCount": "{{n}} replies",
+    "replies": "Replies",
+    "noReplies": "No replies yet",
+    "writeReply": "Write a reply…",
+    "postReply": "Reply",
+    "replyPosted": "Reply posted.",
+    "deleteReply": "Delete reply",
+    "replyDeleted": "Reply deleted.",
+    "backToTopics": "Back to topics"
+  },
+  "teacher": {
+    "dashboard": {
+      "title": "Dashboard",
+      "myClasses": "My classes",
+      "students": "Students",
+      "toReview": "Submissions to review",
+      "avgAttendance": "Average attendance",
+      "nextSession": "Next session",
+      "submissionsToReview": "Waiting for review",
+      "allReviewed": "All caught up. Nothing to review."
+    }
+  },
+  "student": {
+    "dashboard": {
+      "title": "Dashboard",
+      "nextClass": "Next class",
+      "openTimetable": "Open timetable",
+      "noUpcomingClass": "No upcoming classes this week.",
+      "myClasses": "My classes",
+      "dueSoon": "Assignments to do",
+      "averageGrade": "Average grade",
+      "attendance": "Attendance",
+      "upcomingDeadlines": "Upcoming deadlines",
+      "recentGrades": "Recent grades",
+      "noDeadlines": "No upcoming deadlines",
+      "noGrades": "No grades yet"
+    },
+    "classes": {
+      "subtitle": "Your classes, teachers and weekly schedule."
+    },
+    "materials": {
+      "subtitle": "Lesson files shared by your teachers.",
+      "emptyHint": "Try another class or file type."
+    },
+    "assignments": {
+      "subtitle": "Everything you need to hand in.",
+      "due": "Due",
+      "emptyHint": "Nothing matches this filter."
+    },
+    "submit": {
+      "back": "Back to assignments",
+      "instructions": "Instructions",
+      "noDescription": "No description provided.",
+      "details": "Details",
+      "yourWork": "Your work",
+      "hint": "Allowed: {{types}} · Max {{size}} MB",
+      "submit": "Submit",
+      "resubmit": "Submit again",
+      "submitting": "Submitting…",
+      "submittedTitle": "Submitted",
+      "onTime": "Your work was submitted on time.",
+      "lateWarning": "Your work was submitted after the due date and is marked as late.",
+      "pastDueWarning": "The due date has passed. You can still submit, but it will be marked as late.",
+      "closed": "This assignment is closed. Submissions are no longer accepted.",
+      "submittedOn": "Submitted {{date}}",
+      "successToast": "Assignment submitted.",
+      "failed": "The submission could not be sent.",
+      "feedbackTitle": "Teacher feedback",
+      "noFeedback": "No written feedback.",
+      "returnedNote": "Your teacher returned this work for revision. Please update it and submit again."
+    },
+    "grades": {
+      "subtitle": "Scores, feedback and your weighted final grade for each class."
+    },
+    "forum": {
+      "subtitle": "Read class discussions and reply to topics."
+    }
+  },
+  "timetable": {
+    "subtitle": "Your weekly classes and assignment deadlines.",
+    "deadline": "Due: {{title}}",
+    "deadlineLegend": "Assignment deadline",
+    "messages": {
+      "date": "Date",
+      "time": "Time",
+      "event": "Event",
+      "allDay": "All day",
+      "week": "Week",
+      "workWeek": "Work week",
+      "day": "Day",
+      "month": "Month",
+      "previous": "Back",
+      "next": "Next",
+      "yesterday": "Yesterday",
+      "tomorrow": "Tomorrow",
+      "today": "Today",
+      "agenda": "Agenda",
+      "noEvents": "No classes or deadlines in this range.",
+      "showMore": "+{{n}} more"
+    }
+  },
+  "notifications": {
+    "subtitle": "You have {{n}} unread notifications.",
+    "markAllRead": "Mark all as read",
+    "markRead": "Mark as read",
+    "unread": "Unread",
+    "empty": "No notifications",
+    "allCaughtUp": "You're all caught up.",
+    "filters": {
+      "all": "All",
+      "unread": "Unread"
+    }
+  },
+  "parent": {
+    "viewingChild": "Viewing information for",
+    "readOnly": "View only",
+    "overview": {
+      "title": "Overview",
+      "upcoming": "Upcoming deadlines",
+      "byClass": "Progress by class"
+    },
+    "grades": {
+      "title": "Grades",
+      "subtitle": "Your child's scores, teacher feedback and weighted grades."
+    },
+    "attendance": {
+      "title": "Attendance",
+      "subtitle": "Attendance summary and recent class sessions.",
+      "recent": "Recent sessions",
+      "empty": "No attendance records yet"
+    },
+    "deadlines": {
+      "title": "Deadlines",
+      "subtitle": "All assignments with due dates and submission status."
+    }
+  }
+}
