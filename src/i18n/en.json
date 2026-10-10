@@ -138,65 +138,39 @@
     }
   },
   "landing": {
-    "eyebrow": "School management system · Live demo",
-    "title": "Run your English school from one simple place",
-    "intro": "Classes, assignments, grading, attendance, payments and parent updates, all in one bilingual platform for administrators, teachers, students and parents.",
+    "hello": "Hi Apameh team,",
+    "title": "Here's a first look at your new school system.",
+    "intro": "This is a working preview, not slides. You can log in as the office, a teacher, a student or a parent and click through what each of them would see. It runs on made-up data, so go ahead and add, edit and delete things. Nothing is saved, and a page refresh puts everything back.",
     "enterDemo": "Enter Demo",
-    "featuresTitle": "Everything your school needs",
-    "featuresSubtitle": "Each role gets its own focused workspace.",
-    "footer": "© {{year}} Apameh English Academy. Demo with sample data.",
-    "stats": {
-      "roles": {
-        "label": "User roles",
-        "value": "4"
+    "enterHint": "No password needed.",
+    "preview": {
+      "title": "Sara's week",
+      "subtitle": "One of the sample students, straight from the demo"
+    },
+    "tryTitle": "Things to try",
+    "try": {
+      "admin": {
+        "title": "As the office (Super Admin)",
+        "text": "Look at this month's payments, find a student, post an announcement for parents, and see who changed what in the audit log."
       },
-      "languages": {
-        "label": "Languages",
-        "value": "EN / FA"
+      "teacher": {
+        "title": "As a teacher",
+        "text": "Open General English A1, take attendance, upload a worksheet, then grade Ali's essay and watch his final grade change as you type."
       },
-      "modules": {
-        "label": "Modules",
-        "value": "15+"
+      "student": {
+        "title": "As a student",
+        "text": "Check the timetable, hand in the IELTS writing task a little late, and read the teacher's feedback on last week's worksheet."
       },
-      "backend": {
-        "label": "Backend",
-        "value": "Mock data"
+      "parent": {
+        "title": "As a parent",
+        "text": "See Sara's grades, attendance and what's due next. Parents can only look, not change anything."
       }
     },
-    "features": {
-      "roles": {
-        "title": "Role-based access",
-        "text": "Separate dashboards for Super Admin, teachers, students and parents."
-      },
-      "assignments": {
-        "title": "Assignments and grading",
-        "text": "Create assignments, collect files and grade with live weighted totals."
-      },
-      "timetable": {
-        "title": "Timetable",
-        "text": "A weekly calendar with classes and deadlines for every student."
-      },
-      "payments": {
-        "title": "Payments",
-        "text": "Track tuition payments with clear statuses and an online pay flow."
-      },
-      "forum": {
-        "title": "Class forums",
-        "text": "Per-class discussion boards with teacher moderation."
-      },
-      "reports": {
-        "title": "Reports",
-        "text": "Revenue, attendance and grade overviews at a glance."
-      },
-      "bilingual": {
-        "title": "English and Farsi",
-        "text": "Full right-to-left layout and Persian font when Farsi is selected."
-      },
-      "security": {
-        "title": "Audit and backups",
-        "text": "Audit logs of key actions and one-click backups."
-      }
-    }
+    "notReal": {
+      "title": "What isn't real yet",
+      "text": "Payments don't go through a bank, uploaded files aren't stored, and no emails or SMS are sent. Those parts come with the backend."
+    },
+    "footer": "Preview prepared for Apameh English Academy, {{year}}."
   },
   "auth": {
     "title": "Choose a demo account",

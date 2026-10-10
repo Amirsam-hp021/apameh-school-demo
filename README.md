@@ -1,148 +1,76 @@
-# Apameh English Academy: School Management Demo
+# Apameh English Academy – school system demo
 
-A frontend-only demo of a management system for an English language school.
-It runs entirely in the browser with **mock data** and **no backend**, in
-**English and Farsi** (full right-to-left layout when Farsi is selected).
+A clickable preview of the school management system for Apameh English Academy.
+It's frontend only: everything runs in the browser on made-up data, in English
+and Farsi (the Farsi version is fully right-to-left).
 
-> Demo version. Sample data only.
+Live demo: https://amirsam-hp021.github.io/apameh-school-demo/
 
-**Live demo:** https://amirsam-hp021.github.io/apameh-school-demo/
+## Running it locally
 
-## Run it
-
-Requirements: Node.js 18 or newer.
+You'll need Node 18 or newer.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the URL Vite prints (usually http://localhost:5173).
-
-Other scripts:
-
-| Command | What it does |
-|---|---|
-| `npm run build` | Production build into `dist/` |
-| `npm run preview` | Serve the production build locally |
-| `npm run deploy` | Build and publish the demo to GitHub Pages (`gh-pages` branch) |
-| `npm run check:i18n` | Verify every translation key used in the code exists in both `en.json` and `fa.json` |
+`npm run build` makes a production build, and `npm run deploy` builds it and
+pushes it to GitHub Pages. `npm run check:i18n` checks that every piece of text
+in the code has both an English and a Farsi translation.
 
 ## Demo accounts
 
-There are no passwords. Click **Enter Demo** on the landing page, then pick a role.
-You can also switch roles at any time from the user menu (top corner): **Demo: switch role**.
+There are no passwords. Pick a role on the login screen, or switch roles later
+from the user menu in the top corner.
 
-| Role | Name | What to look at |
+| Role | Name | Notes |
 |---|---|---|
-| Super Admin | Maryam Karimi | Dashboard and revenue chart, Users, Classes, Payments (try **Pay**), Announcements, Audit Logs, Settings, Backups |
-| Teacher | David Miller | Teaches *General English A1* and *General English A2*. Open a class for the Students, Materials, Assignments, Attendance, Grades and Forum tabs. **Grading** shows submissions to review. |
-| Student | Sara Ahmadi | Enrolled in *General English A1* and *IELTS Prep B2*. Has an upcoming deadline, a late submission, a graded assignment and unread notifications. |
-| Parent | Hamid Ahmadi | Parent of Sara Ahmadi. Read-only view of her grades, attendance and deadlines. |
+| Super Admin | Maryam Karimi | The school office: users, payments, announcements, logs, settings, backups |
+| Teacher | David Miller | Teaches General English A1 and A2 |
+| Student | Sara Ahmadi | In General English A1 and IELTS Prep B2 |
+| Parent | Hamid Ahmadi | Sara's father, can only view |
 
-Things worth trying in the demo:
+Refreshing the page clears everything and logs you out. That's on purpose: the
+demo doesn't use any browser storage.
 
-- Switch to **فارسی**: the whole layout flips to RTL, the font changes to Vazirmatn, numbers use Persian digits and dates use the Persian (Solar Hijri) calendar.
-- As the teacher, open **Grading → any submission** and type a score: the weighted final grade updates live.
-- As the student, submit a file to *IELTS Writing Task 1* (past due, late allowed) to see the late warning, or pick a file that is too large or the wrong type to see validation.
-- As the admin, use **Payments → Pay** to walk through the simulated payment flow.
-- Use the global search in the top bar (for example "ielts" or "sara").
-- Resize the window: the sidebar becomes a drawer and tables scroll sideways on phones.
+## How the code is organised
 
-All changes live in memory only. **Reloading the page resets the data and signs you out**, as required (no localStorage or sessionStorage).
+- `src/data/mock.js` – all the sample data
+- `src/api/` – the only code that reads or changes data. Every function returns a Promise, like a real API call would.
+- `src/pages/` – one folder per role, plus the public pages
+- `src/components/` – shared UI (layout, tables, modals, the forum board, etc.)
+- `src/i18n/` – `en.json` and `fa.json`
+- `src/context/` – login, language and a few small bits of shared state
 
-## Tech stack
+Stack: React 18 with Vite, Tailwind, React Router 6, i18next, React Big
+Calendar, Recharts and lucide icons.
 
-React 18 (Vite) · Tailwind CSS · React Router v6 · i18next + react-i18next · React Big Calendar · Recharts · lucide-react
+## Hooking up the backend
 
-## Project structure
+Pages never touch the mock data directly; they only call `api.something.fn()`.
+When the backend is ready, rewrite the files in `src/api/` to use Axios, keeping
+the same function names and return shapes, then delete `src/api/db.js` and
+`src/data/mock.js`. Nothing in `src/pages/` should need to change.
 
-```
-src/
-  api/             Mock API layer. The ONLY place that touches data.
-    client.js      respond()/fail() helpers that simulate network latency
-    db.js          In-memory copy of the mock data + shared lookups
-    *.js           One module per resource (users, classes, payments, ...)
-    index.js       Exposes everything as `api.<module>.<function>`
-  data/mock.js     All sample data
-  context/         AuthContext (demo login + role switch), LanguageContext (EN/FA + RTL),
-                   ToastContext, NotificationContext (unread count)
-  i18n/            en.json, fa.json and i18next setup
-  components/      Layout, Sidebar, Topbar, Card, Table, Modal, Badge, ProgressBar,
-                   EmptyState, Skeleton, LanguageSwitcher, GlobalSearch, ForumBoard, ...
-  hooks/           useAsync (loading/error state for API calls), useDebounce
-  pages/           public/, admin/, teacher/, student/, parent/, shared/
-  routes/          ProtectedRoute (role check), navigation config per role
-  utils/           Formatting (locale-aware numbers/dates), grade formula, file validation, schedules
-scripts/
-  check-i18n.mjs   Translation completeness check
-```
+A few things to keep consistent on the backend side:
 
-## Connecting the real backend
+- Paginated lists (`users.list`, `audit.list`) return `{ items, total, page, pageSize }`.
+- People have `nameEn` and `nameFa`. Text that should show in both languages (announcements, notifications, assignment titles) is `{ en, fa }`; a plain string also works.
+- Dates are ISO strings, except attendance dates, which are `YYYY-MM-DD`.
+- The weighted grade formula is in `src/utils/grades.js`. If the final exam hasn't been marked yet, it's left out and the other weights are scaled up, and the grade is labelled "projected". The server should calculate it the same way so the numbers match.
 
-Pages never import mock data. They only call functions from `src/api`, and every
-function returns a Promise:
+## What's faked in the demo
 
-```js
-import { api } from '../api';
-const { items, total } = await api.users.list({ search, role, page, pageSize });
-```
+These look like they work, but the backend will have to actually do them:
 
-To connect the backend, re-implement each module in `src/api/` with Axios calls
-**using the same function names, arguments and return shapes**. For example:
-
-```js
-// src/api/users.js
-import http from './http'; // an Axios instance with baseURL and auth headers
-export const list = (params) => http.get('/users', { params }).then((r) => r.data);
-```
-
-Then delete `src/api/db.js` and `src/data/mock.js`. No page needs to change.
-
-Notes for the backend:
-
-- Paginated lists return `{ items, total, page, pageSize }` (`users.list`, `audit.list`).
-- Related records are embedded the way pages expect them, e.g. a submission includes `student`, `assignment` and `class` summaries. See each module for the exact shape.
-- People have `nameEn` and `nameFa`. Content that should appear in both languages (announcements, notifications, assignment titles) uses `{ en, fa }` objects; a plain string also works.
-- Dates are ISO 8601 strings. Attendance dates are `YYYY-MM-DD`.
-- The weighted grade formula lives in `src/utils/grades.js` (missing components are left out and the remaining weights re-normalised, shown as "projected"). The backend should compute grades the same way so the numbers match.
-
-## Mock features that are UI only
-
-These parts look and behave real in the demo but are simulated. The backend
-will need to implement them:
-
-**Authentication and access**
-- Real login (passwords, OTP or SSO), sessions/tokens, logout and password reset. The demo signs in by role with no credentials and forgets the session on reload.
-- Server-side role and ownership checks for every endpoint (the demo only guards routes in the browser).
-- The **Demo: switch role** menu should be removed in production.
-
-**Data persistence**
-- Everything: users, grades, attendance, assignments, submissions, forum posts, announcements, notification read state. The demo keeps changes in memory until reload.
-- Admin **Settings** are editable but intentionally never saved.
-
-**Files**
-- Material uploads (the progress bar is simulated; only the file name, type and size are kept).
-- Student assignment submissions (no file is actually uploaded).
-- Server-side validation of file type and size (the browser checks are a convenience only), storage, and ideally virus scanning.
-- File preview/download for materials, submissions, the bulk-import template and backups (all show a "demo" message).
-
-**Payments**
-- The **Pay** flow does not contact a gateway: the user picks success or failure. The backend needs real gateway integration (redirect, callback/IPN verification, receipts).
-- Manual **Verify** of pending payments, and automatic expiry of unpaid invoices.
-
-**Admin tools**
-- **Bulk import** of users from CSV/XLSX (the file is accepted but not processed).
-- **Backups**: create, download, restore and the automatic daily schedule are all simulated.
-- **Audit logs** are static sample entries; the backend must record real actions with user and IP.
-- Classes and weekly schedules are read-only sample data. There is no UI yet to create classes, enrol students, assign teachers or link parents to children.
-
-**Notifications and messaging**
-- Generating notifications (new grade, deadline reminders, new material, forum replies, announcements) and delivering them (in-app, email or SMS). The demo list is static apart from read/unread.
-- Announcement delivery to the chosen audience.
-
-**Logic that must live on the server**
-- Late-submission detection, closing assignments after the due date, and blocking submissions when late work is not allowed.
-- Weighted grade calculation using the weights from Settings.
-- Global search, scoped to what each role may see.
-- Dashboard aggregates (revenue per month, payment totals, attendance rates).
+- Login. Right now you just pick a role. Real accounts, passwords or OTP, sessions and permission checks on the server are all still needed, and the "switch role" menu should go.
+- Saving anything. Users, grades, attendance, assignments, forum posts, announcements and read/unread notifications all live in memory until you refresh. The Settings page doesn't save even in memory.
+- Files. Material uploads and assignment submissions only keep the file name and size, and the upload progress bar is simulated. Previews and downloads (materials, submissions, the import template, backups) only show a message. The server should also re-check file types and sizes.
+- Payments. The Pay button doesn't talk to a bank; you choose whether it succeeds or fails. This needs a real gateway with callback verification, plus expiring unpaid invoices.
+- Bulk user import from CSV/Excel. The file is accepted but not read.
+- Backups. Creating, downloading, restoring and the nightly schedule are all pretend.
+- Audit logs are fixed sample entries rather than a record of what actually happened.
+- Notifications aren't generated by anything (new grades, deadlines, forum replies…) and nothing is sent by email or SMS.
+- There's no screen yet for creating classes, setting schedules, enrolling students or linking a parent to a child. The classes in the demo are fixed.
+- Rules that belong on the server: marking work late, closing assignments after the deadline, search results limited to what each role can see, and the dashboard totals.
