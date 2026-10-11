@@ -10,6 +10,7 @@ import AnnouncementsFeed from './pages/shared/AnnouncementsFeed';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminUsers from './pages/admin/Users';
 import AdminPayments from './pages/admin/Payments';
+import AdminExpenses from './pages/admin/Expenses';
 import AdminAnnouncements from './pages/admin/Announcements';
 import AdminAuditLogs from './pages/admin/AuditLogs';
 import AdminSettings from './pages/admin/Settings';
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="classes" element={<ClassList />} />
           <Route path="classes/:classId" element={<ClassDetail />} />
           <Route path="payments" element={<AdminPayments />} />
+          <Route path="expenses" element={<AdminExpenses />} />
           <Route path="announcements" element={<AdminAnnouncements />} />
           <Route path="audit-logs" element={<AdminAuditLogs />} />
           <Route path="settings" element={<AdminSettings />} />

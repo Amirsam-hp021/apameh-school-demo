@@ -479,6 +479,26 @@ export const monthlyRevenue = (() => {
 })();
 
 // ---------------------------------------------------------------------------
+// Other expenses (from the school's current expense sheet)
+// `ref` is the code that was attached to the line in the original sheet.
+// `flag: 'checkDuplicate'` marks lines the office should double-check.
+// ---------------------------------------------------------------------------
+
+export const expenses = [
+  { id: 'ex1', label: { en: 'Translation expense', fa: 'هزینه ترجمه' }, ref: '34', amount: 90_000 },
+  { id: 'ex2', label: { en: 'Translation expense', fa: 'هزینه ترجمه' }, ref: '87', amount: 9_600 },
+  { id: 'ex3', label: { en: 'Travel expenses', fa: 'هزینه سفر' }, ref: '', amount: 0 },
+  { id: 'ex4', label: { en: 'Recruitment advertising', fa: 'آگهی استخدام' }, ref: '', amount: 22_900 },
+  { id: 'ex5', label: { en: 'XML expenses', fa: 'هزینه XML' }, ref: 'A302', amount: 77_720, flag: 'checkDuplicate' },
+  { id: 'ex6', label: { en: 'XML expenses', fa: 'هزینه XML' }, ref: 'A302', amount: 80_047, flag: 'checkDuplicate' },
+  { id: 'ex7', label: { en: 'Disposal expense', fa: 'هزینه امحا' }, ref: '88', amount: 48_000 },
+  { id: 'ex8', label: { en: 'Signage', fa: 'تابلو و علائم' }, ref: '', amount: 3_500 },
+  { id: 'ex9', label: { en: 'Legal expenses', fa: 'هزینه‌های حقوقی' }, ref: '', amount: 280_000 },
+  { id: 'ex10', label: { en: 'Ucom', fa: 'Ucom' }, ref: '', amount: 45_000 },
+  { id: 'ex11', label: { en: 'Label printing', fa: 'چاپ لیبل' }, ref: '', amount: 204_325 },
+];
+
+// ---------------------------------------------------------------------------
 // Announcements
 // ---------------------------------------------------------------------------
 
@@ -712,6 +732,7 @@ const mockData = {
   attendance,
   payments,
   monthlyRevenue,
+  expenses,
   announcements,
   forumTopics,
   notifications,

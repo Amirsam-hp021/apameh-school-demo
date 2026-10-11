@@ -17,6 +17,7 @@ import * as submissions from './submissions';
 import * as grades from './grades';
 import * as attendance from './attendance';
 import * as payments from './payments';
+import * as expenses from './expenses';
 import * as announcements from './announcements';
 import * as forum from './forum';
 import * as notifications from './notifications';
@@ -37,6 +38,7 @@ export const api = {
   grades,
   attendance,
   payments,
+  expenses,
   announcements,
   forum,
   notifications,

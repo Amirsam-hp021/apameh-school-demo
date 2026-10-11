@@ -26,7 +26,7 @@ from the user menu in the top corner.
 
 | Role | Name | Notes |
 |---|---|---|
-| Super Admin | Maryam Karimi | The school office: users, payments, announcements, logs, settings, backups |
+| Super Admin | Maryam Karimi | The school office: users, payments, expenses, announcements, logs, settings, backups |
 | Teacher | David Miller | Teaches General English A1 and A2 |
 | Student | Sara Ahmadi | In General English A1 and IELTS Prep B2 |
 | Parent | Hamid Ahmadi | Sara's father, can only view |
@@ -65,7 +65,7 @@ A few things to keep consistent on the backend side:
 These look like they work, but the backend will have to actually do them:
 
 - Login. Right now you just pick a role. Real accounts, passwords or OTP, sessions and permission checks on the server are all still needed, and the "switch role" menu should go.
-- Saving anything. Users, grades, attendance, assignments, forum posts, announcements and read/unread notifications all live in memory until you refresh. The Settings page doesn't save even in memory.
+- Saving anything. Users, grades, attendance, assignments, expenses, forum posts, announcements and read/unread notifications all live in memory until you refresh. The Settings page doesn't save even in memory.
 - Files. Material uploads and assignment submissions only keep the file name and size, and the upload progress bar is simulated. Previews and downloads (materials, submissions, the import template, backups) only show a message. The server should also re-check file types and sizes.
 - Payments. The Pay button doesn't talk to a bank; you choose whether it succeeds or fails. This needs a real gateway with callback verification, plus expiring unpaid invoices.
 - Bulk user import from CSV/Excel. The file is accepted but not read.

@@ -1,7 +1,7 @@
 import {
   LayoutDashboard, Users, School, CreditCard, Megaphone, ScrollText, Settings, DatabaseBackup,
   BookOpen, ClipboardCheck, FolderOpen, FileText, GraduationCap, CalendarDays, Bell, MessagesSquare,
-  CalendarCheck, Clock,
+  CalendarCheck, Clock, Receipt,
 } from 'lucide-react';
 
 /**
@@ -14,6 +14,7 @@ export const NAVIGATION = {
     { to: '/admin/users', label: 'nav.users', icon: Users },
     { to: '/admin/classes', label: 'nav.classes', icon: School },
     { to: '/admin/payments', label: 'nav.payments', icon: CreditCard },
+    { to: '/admin/expenses', label: 'nav.expenses', icon: Receipt },
     { to: '/admin/announcements', label: 'nav.announcements', icon: Megaphone },
     { to: '/admin/audit-logs', label: 'nav.auditLogs', icon: ScrollText },
     { to: '/admin/settings', label: 'nav.settings', icon: Settings },
