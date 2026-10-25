@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12171d" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="A complete Simple Present course with detailed explanations, examples, interactive practice and a final test. Learn with Arash.">
+  <title>Simple Present Masterclass · Learn with Arash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Vazirmatn:wght@400;600;700&display=swap">
+  <script>try{const p=JSON.parse(localStorage.getItem("lwh-simple-present-prefs")||"{}");if(p.theme==="light"||p.theme==="dark")document.documentElement.dataset.theme=p.theme;}catch(_){}</script>
+  <style>
+    :root {
+      color-scheme:light;
+      --bg:#f2f5f7; --bg-glow:#e2eaf0; --surface:#fafbfc; --surface-2:#edf1f4; --surface-3:#e0e6eb;
+      --ink:#22303c; --ink-2:#3d4b58; --muted:#5f6c79; --line:#dbe2e8; --line-strong:#c6d0d9;
+      --accent:#3d7ea6; --accent-ink:#2b6488; --accent-soft:#e2eef6; --btn:#3d7ea6; --on-accent:#ffffff;
+      --teal:#2e7a6b; --teal-soft:#e0f0eb;
+      --good:#1d8754; --good-soft:#e1f3e8; --bad:#c2443a; --bad-soft:#fbe7e3;
+      --shadow:0 1px 2px rgba(28,34,48,.05),0 6px 20px rgba(28,34,48,.06);
+      --shadow-lg:0 2px 6px rgba(28,34,48,.06),0 18px 40px rgba(28,34,48,.11);
+      --radius:18px;
+      --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --serif:"Fraunces",Georgia,"Times New Roman",serif;
+      --fa:"B Nazanin","BNazanin","Nazanin","Vazirmatn",Tahoma,sans-serif;
+    }
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme:dark;
+        --bg:#12171d; --bg-glow:#19232d; --surface:#182029; --surface-2:#1e2832; --surface-3:#28333e;
+        --ink:#e3e8ec; --ink-2:#c2cbd3; --muted:#909ba6; --line:#26313d; --line-strong:#364352;
+        --accent:#7db2d4; --accent-ink:#92c0de; --accent-soft:rgba(125,178,212,.14); --btn:#7db2d4; --on-accent:#0f1a23;
+        --teal:#6cc3b0; --teal-soft:rgba(108,195,176,.12);
+        --good:#62d197; --good-soft:rgba(98,209,151,.12); --bad:#f2887e; --bad-soft:rgba(242,136,126,.12);
+        --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+        --shadow-lg:0 2px 6px rgba(0,0,0,.3),0 18px 44px rgba(0,0,0,.4);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme:dark;
+      --bg:#12171d; --bg-glow:#19232d; --surface:#182029; --surface-2:#1e2832; --surface-3:#28333e;
+      --ink:#e3e8ec; --ink-2:#c2cbd3; --muted:#909ba6; --line:#26313d; --line-strong:#364352;
+      --accent:#7db2d4; --accent-ink:#92c0de; --accent-soft:rgba(125,178,212,.14); --btn:#7db2d4; --on-accent:#0f1a23;
+      --teal:#6cc3b0; --teal-soft:rgba(108,195,176,.12);
+      --good:#62d197; --good-soft:rgba(98,209,151,.12); --bad:#f2887e; --bad-soft:rgba(242,136,126,.12);
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+      --shadow-lg:0 2px 6px rgba(0,0,0,.3),0 18px 44px rgba(0,0,0,.4);
+    }
+
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body { margin:0; min-height:100vh; display:flex; flex-direction:column; color:var(--ink); font:16px/1.6 var(--font); -webkit-font-smoothing:antialiased; background:radial-gradient(1100px 520px at 50% -180px,var(--bg-glow),transparent 70%) no-repeat,var(--bg); }
+    button,input { font:inherit; color:inherit; }
+    button { cursor:pointer; }
+    button:disabled { cursor:default; }
+    a { color:inherit; }
+    :focus-visible { outline:2.5px solid var(--accent); outline-offset:2px; }
+    [hidden] { display:none !important; }
+    .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .wrap { width:min(1120px,100% - 32px); margin-inline:auto; }
+    .muted { color:var(--muted); }
+    .row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+    .row.center { justify-content:center; }
+    .row.between { justify-content:space-between; }
+    mark { background:var(--accent-soft); color:var(--accent-ink); font-weight:650; border-radius:5px; padding:0 .18em; }
+    .is-fix mark { background:var(--bad-soft); color:var(--bad); text-decoration:underline wavy; text-decoration-thickness:1.5px; text-underline-offset:5px; }
+
+    /* App bar and step navigation */
+    .appbar { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--bg) 88%,transparent); -webkit-backdrop-filter:saturate(1.4) blur(14px); backdrop-filter:saturate(1.4) blur(14px); }
+    .appbar-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0 8px; }
+    .brand { display:flex; align-items:center; gap:12px; min-width:0; text-decoration:none; border-radius:12px; }
+    .logo { flex:none; width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(145deg,#2f5f80,#1d3d55); color:#e4f0f8; font:700 15px/1 var(--serif); letter-spacing:.03em; box-shadow:inset 0 0 0 1px rgba(228,240,248,.25); }
+    .brand-text { display:flex; flex-direction:column; min-width:0; line-height:1.2; }
+    .brand-text b { font:650 1.1rem/1.2 var(--serif); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .brand-text small { font-size:.8rem; color:var(--muted); }
+    .actions { display:flex; gap:8px; }
+    .icon-btn { width:40px; height:40px; display:grid; place-items:center; border-radius:12px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); transition:background .15s,border-color .15s; }
+    .icon-btn:hover { background:var(--surface-2); border-color:var(--line-strong); }
+    .icon-btn[aria-pressed="true"] { background:var(--accent-soft); color:var(--accent-ink); border-color:color-mix(in srgb,var(--accent) 45%,transparent); }
+    .fa-label { font:700 16px/1 var(--fa); }
+    .steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; }
+    .step { display:flex; align-items:center; gap:10px; min-width:0; padding:8px 8px 11px; border-bottom:2.5px solid transparent; color:var(--muted); text-decoration:none; transition:color .15s,border-color .15s; }
+    .step:hover { color:var(--ink); }
+    .step.active { color:var(--ink); border-bottom-color:var(--accent); }
+    .step-num { flex:none; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); font-size:.8rem; font-weight:700; }
+    .step.active .step-num { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+    .step-text { display:flex; flex-direction:column; min-width:0; line-height:1.25; }
+    .step-text b { font-size:.92rem; font-weight:700; }
+    .step-text small { font-size:.76rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    main { flex:1; padding:28px 0 56px; }
+    .footer { padding:22px 0 28px; border-top:1px solid var(--line); text-align:center; font-size:.86rem; color:var(--muted); }
+    .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .eyebrow { margin:0; font-size:.74rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:var(--accent-ink); }
+    .intro { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:18px 28px; margin-bottom:22px; }
+    .intro h1 { margin:6px 0 8px; font:600 clamp(1.7rem,4vw,2.45rem)/1.15 var(--serif); letter-spacing:-.01em; }
+    .intro p:not(.eyebrow) { margin:0; max-width:62ch; color:var(--muted); }
+    .facts { display:flex; flex-wrap:wrap; gap:8px; }
+    .fact { padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--surface); font-size:.8rem; color:var(--muted); }
+    .fact b { display:block; font:650 1.2rem/1.25 var(--serif); color:var(--ink); }
+    .bar { display:block; height:6px; overflow:hidden; border-radius:99px; background:var(--surface-3); }
+    .bar i { display:block; height:100%; width:0; border-radius:inherit; background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--teal))); transition:width .45s ease; }
+    .section-title { display:flex; align-items:center; gap:12px; margin:32px 0 12px; font:800 .75rem/1 var(--font); letter-spacing:.13em; text-transform:uppercase; color:var(--muted); }
+    .section-title::after { content:""; flex:1; height:1px; background:var(--line); }
+    .persian { font-family:var(--fa); font-size:1.2rem; line-height:1.95; direction:rtl; text-align:right; color:var(--ink-2); }
+    .persian.sm { font-size:1.06rem; margin:10px 0 0; padding-top:10px; border-top:1px dashed var(--line-strong); }
+    .hide-fa .persian { display:none; }
+
+    /* Buttons */
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:10px 18px; border-radius:12px; border:1px solid transparent; font-size:.95rem; font-weight:700; text-decoration:none; transition:background .15s,border-color .15s,filter .15s,transform .1s; }
+    .btn:active:not(:disabled) { transform:translateY(1px); }
+    .btn:disabled { opacity:.45; }
+    .btn.primary { background:var(--btn); color:var(--on-accent); box-shadow:0 1px 0 rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.35); }
+    .btn.primary:hover:not(:disabled) { filter:brightness(1.06); }
+    .btn.secondary { background:var(--surface); border-color:var(--line-strong); color:var(--ink); }
+    .btn.secondary:hover:not(:disabled) { background:var(--surface-2); }
+    .btn.text { background:none; color:var(--muted); padding-inline:10px; }
+    .btn.text:hover:not(:disabled) { background:var(--surface-2); color:var(--ink); }
+    .btn.sm { min-height:36px; padding:6px 12px; font-size:.86rem; }
+
+    /* Lessons */
+    .lesson-layout { display:grid; grid-template-columns:290px minmax(0,1fr); gap:20px; align-items:start; }
+    .toc { position:sticky; top:calc(var(--header-h,124px) + 16px); max-height:calc(100vh - var(--header-h,124px) - 32px); overflow:auto; padding:8px; }
+    .toc summary { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:10px 10px 8px; font-weight:800; list-style:none; cursor:default; border-radius:10px; }
+    .toc summary::-webkit-details-marker { display:none; }
+    .toc-count { font-size:.8rem; font-weight:600; color:var(--muted); }
+    .toc .bar { margin:0 10px 10px; }
+    .topic-list { display:grid; gap:2px; margin:0; padding:0; list-style:none; }
+    .topic { display:flex; align-items:flex-start; gap:10px; padding:9px 10px; border-radius:10px; color:var(--ink-2); font-size:.9rem; line-height:1.35; text-decoration:none; }
+    .topic:hover { background:var(--surface-2); }
+    .topic.active { background:var(--accent-soft); color:var(--ink); font-weight:650; }
+    .topic-num { flex:none; width:24px; height:24px; margin-top:-2px; display:grid; place-items:center; border-radius:50%; border:1px solid var(--line-strong); font-size:.72rem; font-weight:700; color:var(--muted); }
+    .topic.active .topic-num { border-color:var(--accent); color:var(--accent-ink); }
+    .topic.read .topic-num { background:var(--good); border-color:var(--good); color:var(--surface); }
+    .lesson { padding:clamp(20px,4vw,40px); }
+    .lesson-title { margin:6px 0 10px; font:600 clamp(1.55rem,3.4vw,2.2rem)/1.18 var(--serif); letter-spacing:-.01em; }
+    .lead { margin:0 0 22px; max-width:65ch; font-size:1.06rem; color:var(--ink-2); }
+    .formula { display:flex; flex-wrap:wrap; gap:8px; padding:12px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); }
+    .formula code { padding:8px 13px; border-radius:10px; border:1px solid var(--line); background:var(--surface); font:650 .95rem/1.5 var(--font); white-space:pre-wrap; }
+    .rules { display:grid; gap:10px; margin:0; padding:0; list-style:none; counter-reset:rule; }
+    .rules li { position:relative; padding:14px 16px 14px 54px; border-radius:14px; border:1px solid var(--line); counter-increment:rule; }
+    .rules li::before { content:counter(rule); position:absolute; left:16px; top:14px; width:26px; height:26px; display:grid; place-items:center; border-radius:8px; background:var(--accent-soft); color:var(--accent-ink); font-size:.78rem; font-weight:800; }
+    .rules h4 { margin:0 0 2px; font-size:1rem; }
+    .rules p { margin:0; color:var(--ink-2); }
+    .examples { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }
+    .examples li { padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); }
+    .ex-en { margin:0 0 4px; font:500 1.12rem/1.5 var(--serif); }
+    .ex-why { margin:0; font-size:.9rem; color:var(--muted); }
+    .tip { display:flex; gap:12px; align-items:flex-start; margin-top:24px; padding:14px 16px; border-radius:14px; border:1px solid color-mix(in srgb,var(--teal) 30%,transparent); background:var(--teal-soft); }
+    .tip-icon { flex:none; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; background:var(--teal); color:var(--surface); font-weight:800; }
+    .tip strong { display:block; color:var(--teal); }
+    .tip p { margin:0; }
+    .fa-block { margin-top:14px; padding:14px 18px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); }
+    .fa-block h4 { margin:0 0 2px; font:700 1.1rem/1.6 var(--fa); color:var(--accent-ink); }
+    .fa-block p { margin:0; }
+    .pager { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:32px; padding-top:22px; border-top:1px solid var(--line); }
+    .pager a { display:flex; flex-direction:column; gap:2px; padding:12px 16px; border-radius:14px; border:1px solid var(--line); text-decoration:none; transition:background .15s,border-color .15s; }
+    .pager a:hover { border-color:var(--accent); background:var(--accent-soft); }
+    .pager small { font-size:.78rem; font-weight:700; color:var(--muted); }
+    .pager span { font-weight:650; line-height:1.35; }
+    .pager .next { grid-column:2; text-align:right; }
+    .pager .next.cta { background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 45%,transparent); }
+    .kbd-hint { margin:14px 0 0; text-align:center; font-size:.8rem; color:var(--muted); }
+    kbd { font:700 .75rem var(--font); padding:1px 6px; border-radius:6px; border:1px solid var(--line-strong); background:var(--surface); }
+
+    /* Examples */
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:12px; }
+    .search { position:relative; flex:1 1 280px; }
+    .search svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted); pointer-events:none; }
+    .search input { width:100%; height:46px; padding:0 14px 0 42px; border-radius:12px; border:1px solid var(--line-strong); background:var(--surface); font-size:.98rem; }
+    .search input:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+    .chips { display:flex; gap:6px; overflow-x:auto; padding:2px 2px 10px; margin-bottom:6px; scrollbar-width:thin; }
+    .chip { flex:none; padding:7px 13px; border-radius:99px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); font-size:.84rem; font-weight:650; white-space:nowrap; }
+    .chip:hover { border-color:var(--line-strong); }
+    .chip[aria-pressed="true"] { background:var(--ink); border-color:var(--ink); color:var(--surface); }
+    .chip small { margin-left:5px; opacity:.6; }
+    .ex-count { margin:0 0 12px; font-size:.85rem; color:var(--muted); }
+    .ex-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:12px; align-items:start; }
+    .ex-card { overflow:hidden; border-radius:16px; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); transition:border-color .15s; }
+    .ex-card.open { border-color:color-mix(in srgb,var(--accent) 50%,var(--line)); }
+    .ex-toggle { display:flex; flex-direction:column; gap:8px; width:100%; padding:16px 18px; border:0; background:none; text-align:left; }
+    .ex-toggle:hover { background:var(--surface-2); }
+    .ex-topic { font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+    .ex-sentence { font:500 1.18rem/1.45 var(--serif); }
+    .ex-cue { font-size:.8rem; font-weight:700; color:var(--accent-ink); }
+    .ex-reveal { padding:0 18px 16px; color:var(--ink-2); }
+    .ex-reveal > p { margin:0; }
+    .empty { grid-column:1/-1; margin:0; padding:36px 20px; border:1px dashed var(--line-strong); border-radius:16px; text-align:center; color:var(--muted); }
+    .next-step { margin-top:28px; }
+
+    /* Practice levels */
+    .levels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .level-card { display:grid; grid-template-columns:auto 1fr; gap:4px 16px; padding:20px; border-radius:var(--radius); border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); text-align:left; transition:transform .15s,box-shadow .15s,border-color .15s; }
+    .level-card:hover { transform:translateY(-2px); border-color:var(--line-strong); box-shadow:var(--shadow-lg); }
+    .level-badge { grid-row:span 2; width:56px; height:56px; display:grid; place-items:center; border-radius:15px; background:var(--accent-soft); color:var(--accent-ink); font:700 1.2rem var(--serif); }
+    .level-name { align-self:end; font-size:1.1rem; font-weight:800; }
+    .level-desc { font-size:.9rem; color:var(--muted); }
+    .level-foot { grid-column:1/-1; display:flex; align-items:center; gap:12px; margin-top:12px; padding-top:12px; border-top:1px solid var(--line); font-size:.84rem; color:var(--muted); }
+    .level-foot .bar { flex:1; }
+    .level-foot b { color:var(--ink); }
+    .modes { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:20px; font-size:.84rem; color:var(--muted); }
+    .mode-pill { padding:6px 12px; border-radius:99px; background:var(--surface-2); color:var(--ink-2); font-weight:600; }
+
+    /* Question session */
+    .session { max-width:780px; margin:0 auto; }
+    .session-bar { margin-bottom:14px; }
+    .session-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:10px; }
+    .session-title { margin-right:auto; font-weight:800; }
+    .pill { display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border-radius:99px; border:1px solid var(--line); background:var(--surface); font-size:.84rem; color:var(--muted); }
+    .pill b { color:var(--ink); }
+    .question { padding:clamp(20px,4vw,34px); }
+    .question:focus { outline:none; }
+    .q-meta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:14px; }
+    .tag { display:inline-flex; align-items:center; padding:3px 10px; border-radius:99px; border:1px solid var(--line); background:var(--surface-2); font-size:.76rem; font-weight:700; color:var(--ink-2); }
+    .tag.level { border-color:transparent; background:var(--teal-soft); color:var(--teal); }
+    .q-num { margin-left:auto; font-size:.84rem; font-weight:650; color:var(--muted); }
+    .q-task { margin:0 0 14px; font:600 clamp(1.25rem,3vw,1.55rem)/1.3 var(--serif); }
+    .prompt { margin-bottom:10px; padding:18px 20px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); font:500 clamp(1.15rem,3vw,1.4rem)/1.55 var(--serif); overflow-wrap:anywhere; }
+    .q-help { margin:0 0 18px; font-size:.88rem; color:var(--muted); }
+    .options { display:grid; gap:10px; }
+    .option { display:flex; align-items:center; gap:14px; width:100%; padding:13px 16px; border-radius:13px; border:1.5px solid var(--line); background:var(--surface); font-size:1.02rem; text-align:left; transition:background .12s,border-color .12s; }
+    .option:hover:not(:disabled) { background:var(--surface-2); border-color:var(--line-strong); }
+    .option kbd { flex:none; width:26px; height:26px; display:grid; place-items:center; padding:0; border-radius:8px; color:var(--muted); }
+    .option[aria-pressed="true"] { border-color:var(--accent); background:var(--accent-soft); }
+    .option[aria-pressed="true"] kbd { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+    .option:disabled:not(.good):not(.bad) { opacity:.55; }
+    .option.good { border-color:var(--good); background:var(--good-soft); }
+    .option.bad { border-color:var(--bad); background:var(--bad-soft); }
+    .option.good kbd { background:var(--good); border-color:var(--good); color:var(--surface); }
+    .option.bad kbd { background:var(--bad); border-color:var(--bad); color:var(--surface); }
+    .text-input { width:100%; height:56px; padding:0 16px; border-radius:13px; border:1.5px solid var(--line-strong); background:var(--surface); font-size:1.12rem; }
+    .text-input:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
+    .text-input.good { border-color:var(--good); background:var(--good-soft); box-shadow:none; }
+    .text-input.bad { border-color:var(--bad); background:var(--bad-soft); box-shadow:none; }
+    .built { display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-height:66px; margin-bottom:12px; padding:10px; border-radius:13px; border:1.5px dashed var(--line-strong); background:var(--surface-2); }
+    .built.good { border-style:solid; border-color:var(--good); background:var(--good-soft); }
+    .built.bad { border-style:solid; border-color:var(--bad); background:var(--bad-soft); }
+    .built-empty { padding:0 6px; font-size:.9rem; color:var(--muted); }
+    .bank { display:flex; flex-wrap:wrap; gap:8px; }
+    .tile { padding:9px 14px; border-radius:11px; border:1.5px solid var(--line-strong); background:var(--surface); font-weight:650; box-shadow:0 2px 0 var(--line-strong); transition:transform .1s,background .12s; }
+    .tile:hover:not(:disabled) { background:var(--surface-2); transform:translateY(-1px); }
+    .tile.used { color:transparent; border-style:dashed; border-color:var(--line); background:var(--surface-2); box-shadow:none; user-select:none; }
+    .built .tile { border-color:color-mix(in srgb,var(--accent) 45%,transparent); background:var(--accent-soft); box-shadow:none; }
+    .build-tools { display:flex; justify-content:flex-end; gap:4px; margin-top:8px; }
+    .q-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:22px; }
+    .q-status { font-size:.86rem; color:var(--muted); }
+    .q-status.warn { color:var(--bad); font-weight:650; }
+    .feedback { margin-top:18px; padding:16px 18px; border-radius:14px; border:1px solid; animation:rise .25s ease both; }
+    .feedback.good { background:var(--good-soft); border-color:color-mix(in srgb,var(--good) 35%,transparent); }
+    .feedback.bad { background:var(--bad-soft); border-color:color-mix(in srgb,var(--bad) 35%,transparent); }
+    .fb-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+    .fb-icon { flex:none; width:28px; height:28px; display:grid; place-items:center; border-radius:50%; color:var(--surface); font-size:.9rem; font-weight:800; }
+    .good .fb-icon { background:var(--good); }
+    .bad .fb-icon { background:var(--bad); }
+    .fb-head h3 { margin:0; font-size:1.05rem; }
+    .good .fb-head h3 { color:var(--good); }
+    .bad .fb-head h3 { color:var(--bad); }
+    .fb-streak { margin-left:auto; font-size:.8rem; font-weight:800; color:var(--good); }
+    .feedback p { margin:4px 0; }
+
+    /* Summaries and results */
+    .test-card { padding:clamp(20px,4vw,34px); }
+    .test-card .section-title { margin-top:26px; }
+    .checklist { display:grid; gap:8px; margin:0 0 24px; padding:0; list-style:none; }
+    .checklist li { position:relative; padding-left:30px; }
+    .checklist li::before { content:"✓"; position:absolute; left:0; top:3px; width:20px; height:20px; display:grid; place-items:center; border-radius:50%; background:var(--good-soft); color:var(--good); font-size:.72rem; font-weight:800; }
+    .summary { max-width:860px; margin:0 auto; padding:clamp(22px,4vw,40px); }
+    .summary-head { text-align:center; }
+    .summary-head h1 { margin:6px 0; font:600 clamp(1.6rem,4vw,2.2rem)/1.2 var(--serif); }
+    .summary-head .lead { margin:0 auto; }
+    .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:24px 0; }
+    .stat { padding:14px 10px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); text-align:center; }
+    .stat b { display:block; font:650 1.5rem/1.25 var(--serif); }
+    .stat span { font-size:.8rem; color:var(--muted); }
+    .ring { position:relative; width:170px; height:170px; margin:14px auto 6px; display:grid; place-items:center; }
+    .ring svg { position:absolute; inset:0; transform:rotate(-90deg); }
+    .ring-track { fill:none; stroke:var(--surface-3); stroke-width:12; }
+    .ring-fill { fill:none; stroke:var(--accent); stroke-width:12; stroke-linecap:round; stroke-dasharray:440; stroke-dashoffset:440; transition:stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1); }
+    .ring-value { font:650 2.7rem/1 var(--serif); }
+    .ring-value small { font-size:1rem; color:var(--muted); }
+    .breakdown { display:grid; gap:12px; padding:16px 18px; border-radius:14px; border:1px solid var(--line); }
+    .bd-row { display:grid; grid-template-columns:48px 1fr 60px; align-items:center; gap:12px; font-size:.9rem; }
+    .bd-row .bar { height:8px; }
+    .bd-score { text-align:right; font-weight:700; }
+    .advice { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin:14px 0 0; padding:14px 16px; border-radius:14px; background:var(--teal-soft); }
+    .advice p { margin:0; }
+    .summary-actions { margin-top:26px; }
+    .review { margin-top:34px; }
+    .review-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+    .review-head h2 { margin:0; font:600 1.3rem var(--serif); }
+    .seg { display:inline-flex; padding:3px; border-radius:12px; border:1px solid var(--line); background:var(--surface-2); }
+    .seg button { padding:6px 12px; border:0; border-radius:9px; background:none; font-size:.85rem; font-weight:650; color:var(--muted); }
+    .seg button[aria-pressed="true"] { background:var(--surface); color:var(--ink); box-shadow:var(--shadow); }
+    .review-list { display:grid; gap:10px; }
+    .review-item { padding:16px 18px; border-radius:14px; border:1px solid var(--line); border-left:4px solid var(--good); background:var(--surface); }
+    .review-item.is-wrong { border-left-color:var(--bad); }
+    .ri-head { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px; font-size:.84rem; font-weight:650; color:var(--muted); }
+    .ri-prompt { margin:0 0 10px; font:500 1.08rem/1.5 var(--serif); }
+    .ri-answers { display:flex; flex-wrap:wrap; gap:4px 22px; margin-bottom:8px; font-size:.92rem; }
+    .ri-answers p { margin:0; }
+    .ri-answers span { margin-right:6px; color:var(--muted); }
+    .right { color:var(--good); }
+    .wrong { color:var(--bad); }
+    .ri-explain { margin:0; font-size:.93rem; color:var(--ink-2); }
+
+    .shake { animation:shake .4s ease; }
+    .pop { animation:pop .5s ease; }
+    .spark { position:fixed; z-index:50; width:8px; height:8px; border-radius:2px; background:var(--accent); pointer-events:none; animation:fly .7s ease-out forwards; }
+    @keyframes rise { from { opacity:0; transform:translateY(8px); } }
+    @keyframes shake { 20%,60% { transform:translateX(-6px); } 40%,80% { transform:translateX(6px); } }
+    @keyframes pop { 40% { box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 45%,transparent),var(--shadow-lg); } }
+    @keyframes fly { 100% { opacity:0; transform:translate(var(--dx),var(--dy)) rotate(200deg) scale(.4); } }
+
+    @media (max-width:860px) {
+      .lesson-layout { grid-template-columns:1fr; }
+      .toc { position:static; max-height:none; }
+      .toc summary { cursor:pointer; }
+      .toc summary::after { content:"▾"; margin-left:4px; color:var(--muted); transition:transform .2s; }
+      .toc[open] summary::after { transform:rotate(180deg); }
+      .toc-count { margin-left:auto; }
+      .examples { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) {
+      main { padding-top:20px; }
+      .brand-text small { display:none; }
+      .step { flex-direction:column; gap:4px; padding:4px 2px 9px; text-align:center; }
+      .step-text b { font-size:.78rem; }
+      .step-text small { display:none; }
+      .levels { grid-template-columns:1fr; }
+      .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .pager { grid-template-columns:1fr; }
+      .pager .next { grid-column:auto; }
+      .facts { width:100%; }
+      .fact { flex:1 1 calc(50% - 8px); }
+      .ex-grid { grid-template-columns:1fr; }
+      .kbd-hint { display:none; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="appbar">
+    <div class="wrap">
+      <div class="appbar-row">
+        <a class="brand" href="#lesson" aria-label="Simple Present Masterclass, back to lessons">
+          <span class="logo" aria-hidden="true">AM</span>
+          <span class="brand-text"><b>Simple Present Masterclass</b><small>Learn with Arash · Grammar Collection</small></span>
+        </a>
+        <div class="actions">
+          <button type="button" class="icon-btn" id="faToggle" aria-pressed="true" aria-label="Persian notes"><span class="fa-label" lang="fa">فا</span></button>
+          <button type="button" class="icon-btn" id="themeToggle" aria-label="Switch theme"></button>
+        </div>
+      </div>
+      <nav class="steps" id="path" aria-label="Course steps">
+        <a class="step" href="#lesson" data-nav="lesson"><span class="step-num">1</span><span class="step-text"><b>Learn</b><small id="stepLesson"></small></span></a>
+        <a class="step" href="#examples" data-nav="examples"><span class="step-num">2</span><span class="step-text"><b>Examples</b><small id="stepExamples"></small></span></a>
+        <a class="step" href="#practice" data-nav="practice"><span class="step-num">3</span><span class="step-text"><b>Practice</b><small id="stepPractice"></small></span></a>
+        <a class="step" href="#test" data-nav="test"><span class="step-num">4</span><span class="step-text"><b>Final test</b><small id="stepTest"></small></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="lessonScreen" aria-labelledby="lessonHeading">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">Grammar course · A2–B2</p>
+          <h1 id="lessonHeading">The Simple Present, one rule at a time</h1>
+          <p>Learn when to use it, how to build every sentence type and how to avoid common mistakes. Read the topics, study the model sentences, practise, then take the final test.</p>
+        </div>
+        <div class="facts" id="courseFacts"></div>
+      </div>
+      <div class="lesson-layout">
+        <details class="card toc" id="toc" open>
+          <summary><span>Topics</span><span class="toc-count" id="tocCount"></span></summary>
+          <span class="bar" aria-hidden="true"><i id="tocBar"></i></span>
+          <ol class="topic-list" id="topicList"></ol>
+        </details>
+        <div>
+          <article id="lessonContent" class="card lesson"></article>
+          <p class="kbd-hint">Tip: use <kbd>←</kbd> and <kbd>→</kbd> to move between topics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="examplesScreen" aria-labelledby="examplesHeading" hidden>
+      <div class="intro">
+        <div>
+          <p class="eyebrow">See the grammar in action</p>
+          <h1 id="examplesHeading">Model sentences, explained</h1>
+          <p>Filter by topic or search, then tap any sentence to see why it uses the Simple Present.</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <span class="sr-only">Search the sentences</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="exampleSearch" placeholder="Search, e.g. does, every day, schedule" autocomplete="off" spellcheck="false">
+        </label>
+        <button type="button" class="btn secondary" id="toggleAll">Show all explanations</button>
+      </div>
+      <div class="chips" id="exampleTabs" role="group" aria-label="Filter by topic"></div>
+      <p class="ex-count" id="exampleCount" aria-live="polite"></p>
+      <div class="ex-grid" id="exampleGrid"></div>
+      <div class="row center next-step"><a class="btn secondary" href="#lesson">← Back to lessons</a><a class="btn primary" href="#practice">Continue to practice →</a></div>
+    </section>
+
+    <section id="practiceScreen" aria-labelledby="practiceHeading" hidden>
+      <div id="practiceIntro">
+        <div class="intro">
+          <div>
+            <p class="eyebrow">Learn by doing</p>
+            <h1 id="practiceHeading">Choose a practice level</h1>
+            <p>Every answer gets instant feedback with an explanation in English and Persian. Earn points and build a streak as you go.</p>
+          </div>
+        </div>
+        <div class="levels" id="practiceLevels"></div>
+        <div class="modes"><span>Question types:</span><span class="mode-pill">Multiple choice</span><span class="mode-pill">Fill the gap</span><span class="mode-pill">Fix the error</span><span class="mode-pill">Build the sentence</span></div>
+      </div>
+      <div id="practiceWork" hidden></div>
+      <div id="practiceDone" hidden></div>
+    </section>
+
+    <section id="testScreen" aria-labelledby="testHeading" hidden>
+      <div id="testIntro">
+        <div class="intro">
+          <div>
+            <p class="eyebrow">Ready to show what you know?</p>
+            <h1 id="testHeading">Final assessment</h1>
+            <p>A mixed A2–B2 test with fresh questions. Answers and explanations appear after you finish, so you can check what you have truly learned.</p>
+          </div>
+        </div>
+        <div class="card test-card">
+          <div class="stats" id="testFacts" style="margin-top:0"></div>
+          <h2 class="section-title">Before you begin</h2>
+          <ul class="checklist">
+            <li>There is no time limit, so take your time.</li>
+            <li>Type one word for gap questions. Capitals and punctuation are ignored.</li>
+            <li>For sentence building, tap the word tiles in the correct order.</li>
+            <li>Answers are revealed at the end. Your best score is saved on this device.</li>
+          </ul>
+          <div class="row between"><p id="savedBest" class="muted" style="margin:0"></p><button type="button" class="btn primary" id="startTest">Start the final test →</button></div>
+        </div>
+      </div>
+      <div id="testWork" hidden></div>
+    </section>
+
+    <section id="resultsScreen" aria-label="Final test results" hidden></section>
+  </main>
+
+  <footer class="footer"><div class="wrap">Arash Mohajeri</div></footer>
+
+  <script>
+  /* ===== QUESTIONS: edit or add here =====
+     LESSONS holds the teaching topics. Each topic has title, summary, formula,
+     rules [{h,t}], 4 examples [{en,why,p}], tip and p (Persian explanation).
+     Put [square brackets] around words to highlight them in displayed examples.
+     PRACTICE and FINAL_TEST items use:
+       level: A2/B1/B2; mode: choose / gap / fix / build;
+       task: instruction; prompt: sentence/question shown to students;
+       answer: correct string, or a word array for build;
+       options: answer choices for choose (include the correct answer);
+       tokens: shuffled-on-display word tiles for build;
+       alt: optional accepted alternative answers (string array);
+       explain: English explanation; p: optional Persian explanation.
+     Add items without changing the JavaScript beneath END QUESTIONS.
+  */
+  const LESSONS = [
+    { title:"What the Simple Present means", tag:"Meaning and everyday use", summary:"The Simple Present describes what is generally, regularly or predictably true—not normally an action happening at this exact moment.", formula:"Habit · Fact · State · Timetable · Process",
+      rules:[{h:"Habits and routines",t:"Use it for actions you do repeatedly: every day, on Sundays, once a week."},{h:"Facts and general truths",t:"Use it for facts, scientific truths and statements that usually remain true."},{h:"States and longer-term situations",t:"Describe feelings, opinions, ownership and relatively permanent conditions."},{h:"Schedules and processes",t:"A fixed timetable can refer to the future. Descriptions of processes also often use the Simple Present; direct commands normally use the imperative."}],
+      examples:[{en:"I [walk] to work every day.",why:"A repeated daily routine.",p:"کاری را نشان می‌دهد که هر روز تکرار می‌شود."},{en:"Water [boils] at 100°C at sea level.",why:"A general scientific fact; the temperature depends on air pressure.",p:"برای بیان یک واقعیت علمی کلی از حال ساده استفاده می‌کنیم."},{en:"My uncle [lives] in Shiraz.",why:"A relatively stable situation.",p:"برای بیان محل زندگی یا وضعیتی نسبتاً ثابت به کار می‌رود."},{en:"The film [starts] at eight tonight.",why:"A published schedule, even though the event is in the future.",p:"برای برنامه‌های زمان‌بندی‌شدهٔ آینده نیز حال ساده کاربرد دارد."}],
+      tip:"Think: Is this a habit, a general fact, a state or a scheduled event?",p:"حال ساده معمولاً برای عادت‌ها، واقعیت‌های کلی، وضعیت‌های نسبتاً ثابت و برنامه‌های مشخص به کار می‌رود؛ نه برای کاری که همین لحظه در جریان است." },
+    { title:"Positive sentences with main verbs", tag:"I work · She works", summary:"The verb stays in its base form with I, you, we and they. Add -s or -es for he, she and it.", formula:"I / you / we / they + base verb   |   he / she / it + verb-s / -es",
+      rules:[{h:"First and second person; plurals",t:"Use the base form: I teach, you read, we study, they travel."},{h:"Third-person singular",t:"Add -s with he, she, it or one singular person or thing: Sara reads; my phone works."},{h:"Not just pronouns",t:"The subject 'the teacher' behaves like he/she; 'the teachers' behaves like they."}],
+      examples:[{en:"We [study] in the library on Mondays.",why:"We takes the base verb study.",p:"با فاعل «ما» فعل به شکل پایه می‌آید."},{en:"Arman [studies] English every evening.",why:"Arman is one person; study changes to studies.",p:"با فاعل سوم‌شخص مفرد، فعل تغییر می‌کند: استادی به استادیْز تبدیل می‌شود."},{en:"Her brothers [play] tennis.",why:"Brothers is plural, so use play.",p:"فاعل جمع است؛ بنابراین به فعل نشانهٔ سوم‌شخص مفرد اضافه نمی‌شود."},{en:"The computer [runs] quietly.",why:"Computer is singular; run becomes runs.",p:"اسم مفرد مانند ضمیر «آن» عمل می‌کند و فعل نشانهٔ سوم‌شخص می‌گیرد."}],
+      tip:"Find the real subject before choosing the verb ending.",p:"برای فاعل‌های اول‌شخص و دوم‌شخص و نیز فاعل‌های جمع، شکل سادهٔ فعل می‌آید. برای سوم‌شخص مفرد معمولاً به انتهای فعل «اس» اضافه می‌شود." },
+    { title:"Spelling: -s, -es and -ies", tag:"Make the verb agree", summary:"The third-person singular ending follows predictable spelling patterns, with a few important irregular forms.", formula:"work → works   |   watch → watches   |   study → studies   |   have → has",
+      rules:[{h:"Most verbs: add -s",t:"read → reads; make → makes; enjoy → enjoys."},{h:"After -s, -ss, -sh, -ch, -x, -z and usually -o: add -es",t:"pass → passes; wash → washes; watch → watches; fix → fixes; go → goes; do → does."},{h:"Consonant + y: change y to -ies",t:"study → studies; try → tries. But vowel + y only adds -s: play → plays; buy → buys."},{h:"Irregular form",t:"Have becomes has with he/she/it. Be has its own forms: am/is/are."}],
+      examples:[{en:"She [watches] documentaries.",why:"Watch ends in -ch, so add -es.",p:"فعل‌هایی که به «چ» ختم می‌شوند معمولاً پسوند «ای‌اس» می‌گیرند."},{en:"He [tries] to arrive early.",why:"Try ends in consonant + y: tries.",p:"پس از حرف بی‌صدا و وای، وای حذف و پسوند «آی‌ئی‌اس» اضافه می‌شود."},{en:"The baby [cries] when she is hungry.",why:"Cry becomes cries, not crys.",p:"در فعل کرای، حرف آخر تغییر می‌کند و شکل درست کرایز است."},{en:"Mina [has] two cats.",why:"Have is irregular in third-person singular: has.",p:"فعل «داشتن» در سوم‌شخص مفرد شکل بی‌قاعده دارد."}],
+      tip:"A vowel before -y keeps the y: play → plays, not plaies.",p:"در سوم‌شخص مفرد املای فعل به حرف پایانی آن بستگی دارد. به‌ویژه به فعل‌های دارای وای و فعل‌هایی که به صداهای سوت‌مانند ختم می‌شوند توجه کنید." },
+    { title:"Negative sentences", tag:"Do not · Does not", summary:"Use don't or doesn't before the base verb. The -s moves to does: never put it on the main verb as well.", formula:"I / you / we / they + don't + base verb   |   he / she / it + doesn't + base verb",
+      rules:[{h:"Don't",t:"I don't eat meat. You don't smoke. They don't work here."},{h:"Doesn't",t:"He doesn't drive. Sara doesn't enjoy horror films."},{h:"After does, always use the base form",t:"Correct: She doesn't like tea. Incorrect: She doesn't likes tea."},{h:"Formal style",t:"Do not and does not have the same meaning as their contractions."}],
+      examples:[{en:"I [don't drink] coffee after dinner.",why:"I takes don't + the base verb drink.",p:"در جملهٔ منفی با «من»، از دونت و شکل سادهٔ فعل استفاده می‌شود."},{en:"Leila [doesn't drive] to work.",why:"Leila is singular; use doesn't + drive.",p:"با فاعل سوم‌شخص مفرد، دازنت می‌آید و فعل اصلی ساده می‌ماند."},{en:"They [do not live] nearby.",why:"The full form do not is common in formal writing.",p:"شکل کامل عبارت منفی برای نوشتار رسمی مناسب است."},{en:"It [doesn't rain] much here in summer.",why:"Do not add -s to rain after doesn't.",p:"بعد از دازنت، فعل اصلی نباید نشانهٔ سوم‌شخص بگیرد."}],
+      tip:"Doesn't + verb-s is incorrect. Use doesn't + base verb.",p:"برای منفی‌کردن بیشتر فعل‌ها از دونت یا دازنت استفاده می‌کنیم. پس از دازنت، فعل اصلی همیشه بدون پسوند سوم‌شخص می‌آید." },
+    { title:"Yes/no questions and short answers", tag:"Do you...? · Does she...?", summary:"Start a yes/no question with do or does. Keep the main verb in its base form.", formula:"Do / Does + subject + base verb + ?",
+      rules:[{h:"Do with I, you, we and they",t:"Do you speak French? Do the students arrive early?"},{h:"Does with he, she and it",t:"Does your sister work here? Does this key open the door?"},{h:"Short answers",t:"Yes, I do. / No, I don't. / Yes, she does. / No, she doesn't."},{h:"Do is not the main verb's ending",t:"Correct: Does he play? Incorrect: Does he plays?"}],
+      examples:[{en:"[Do] your parents [live] nearby?",why:"Parents is plural; use do + live.",p:"چون فاعل جمع است، پرسش را با دو می‌سازیم."},{en:"[Does] Amir [speak] Spanish?",why:"Amir is one person; does + base verb speak.",p:"در پرسش با سوم‌شخص مفرد، داز می‌آید و فعل اصلی ساده می‌ماند."},{en:"[Do] we [need] tickets? — Yes, we do.",why:"Repeat the auxiliary in the short answer.",p:"در پاسخ کوتاه، فعل کمکی پرسش را تکرار می‌کنیم."},{en:"[Does] the shop [open] on Sundays? — No, it doesn't.",why:"Ask with does; answer with doesn't.",p:"برای فروشگاه که مفرد است، از داز و دازنت استفاده می‌شود."}],
+      tip:"Do/Does + subject + base verb, never Do/Does + verb-s.",p:"برای پرسش‌های بله یا خیر، دو یا داز را پیش از فاعل می‌آوریم. فعل اصلی در شکل ساده باقی می‌ماند و پاسخ کوتاه نیز با همان فعل کمکی ساخته می‌شود." },
+    { title:"Wh-questions and subject questions", tag:"Where? · Why? · Who?", summary:"Most wh-questions put a question word before do/does. But when who or what is the subject, do/does is usually unnecessary.", formula:"Where + does + she + work?   |   Who + works + here?",
+      rules:[{h:"Information questions",t:"Question word + do/does + subject + base verb: What do you want? Where does he work?"},{h:"Who or what as the subject",t:"Who lives next door? What causes this sound? The question word is doing the subject's job."},{h:"Who as the object",t:"Who does she teach? Here she is the subject; who is the object."},{h:"How often",t:"How often do they exercise? is a useful frequency question."}],
+      examples:[{en:"Where [does] your cousin [live]?",why:"Where asks for information; cousin is singular.",p:"در پرسش اطلاعاتی، واژهٔ پرسشی قبل از داز قرار می‌گیرد."},{en:"How often [do] you [cook] at home?",why:"How often asks about frequency.",p:"هاو آفتن برای پرسیدن تعداد دفعات انجام کار به کار می‌رود."},{en:"Who [teaches] this class?",why:"Who is the subject, so no auxiliary does is needed.",p:"وقتی هو نقش فاعل دارد، معمولاً دو یا داز نمی‌آوریم."},{en:"Who [does] the teacher [call] first?",why:"Teacher is the subject; who is the object.",p:"در این پرسش، هو مفعول است؛ پس از داز استفاده می‌کنیم."}],
+      tip:"Ask yourself: Is who/what doing the action, or receiving it?",p:"اگر هو یا وات خودِ فاعل پرسش باشد، معمولاً فعل کمکی دو یا داز لازم نیست. اما اگر دربارهٔ مفعول می‌پرسیم، ساختار معمول پرسش را به کار می‌بریم." },
+    { title:"The verb be in the Simple Present", tag:"Am · Is · Are", summary:"Be works differently: use am/is/are, not do/does, to make its own negatives and questions.", formula:"I am   |   he / she / it is   |   you / we / they are",
+      rules:[{h:"Positive",t:"I am ready. The room is quiet. We are neighbours."},{h:"Negative",t:"I am not tired. She isn't here. They aren't busy."},{h:"Questions",t:"Are you hungry? Is she a doctor? Where are the keys?"},{h:"No do/does with be",t:"Incorrect: Does he is happy? Correct: Is he happy?"}],
+      examples:[{en:"My friends [are] very helpful.",why:"Friends is plural, so use are.",p:"با فاعل جمع از آر استفاده می‌کنیم."},{en:"Sara [isn't] at home today.",why:"Make is negative with isn't, not doesn't.",p:"برای منفی‌کردن ایز از ایزنت استفاده می‌کنیم."},{en:"[Are] you interested in music?",why:"Move are before the subject to form a question.",p:"برای پرسشی‌کردن فعل بی، آن را پیش از فاعل می‌آوریم."},{en:"Where [is] your passport?",why:"Put is after the question word and before the subject.",p:"در پرسش با فعل بی، ایز پیش از فاعل می‌آید."}],
+      tip:"Use Do you work? for a main verb, but Are you ready? for be.",p:"فعل بی در زمان حال سه شکل اَم، ایز و آر دارد. برای ساختن جملهٔ منفی یا پرسشی با این فعل، نیازی به دو و داز نیست." },
+    { title:"Adverbs of frequency and time phrases", tag:"Always · Often · Never", summary:"Frequency adverbs show how regularly something happens. Their position depends on the verb.", formula:"She usually walks.   |   She is usually early.",
+      rules:[{h:"Before most main verbs",t:"We often cook together. He rarely eats sweets. I never drive."},{h:"After be",t:"They are always polite. She is sometimes late."},{h:"After the auxiliary in negatives",t:"She doesn't usually take the bus. We don't often eat out."},{h:"Time phrases",t:"Every morning, on Fridays, twice a month and once a year often appear at the beginning or end."},{h:"Every day ≠ everyday",t:"I practise every day (time phrase). It's an everyday habit (adjective)."}],
+      examples:[{en:"He [usually] catches the 7:30 train.",why:"Usually comes before the main verb catches.",p:"قید تکرار معمولاً پیش از فعل اصلی قرار می‌گیرد."},{en:"They [are always] friendly.",why:"With be, the adverb follows the verb.",p:"بعد از فعل بی، قید تکرار قرار می‌گیرد."},{en:"We [don't often] eat out.",why:"In negatives, often can follow don't.",p:"در جملهٔ منفی، قید تکرار می‌تواند پس از فعل کمکی بیاید."},{en:"I review my notes [every day].",why:"Every day is two words when it means each day.",p:"برای گفتن «هر روز»، عبارت دوواژه‌ای اِوری دِی به کار می‌رود."}],
+      tip:"Never is already negative. Say I never go, not I don't never go in standard English.",p:"قیدهایی مانند همیشه، معمولاً، اغلب، گاهی و هرگز جای مشخصی دارند: پیش از فعل اصلی و پس از فعل بی. عبارت «هر روز» دو واژه است." },
+    { title:"Scheduled events and action happening now", tag:"Simple vs continuous", summary:"Use the Simple Present for fixed timetables and typical situations. Use the Present Continuous for most activities in progress right now or temporary arrangements.", formula:"The train leaves at 6.   |   The train is leaving the station now.",
+      rules:[{h:"Fixed timetable",t:"The bus leaves at nine tomorrow. The course begins next Monday."},{h:"A routine versus an action now",t:"She works from home (usual situation). She is working from home today (temporary/current)."},{h:"Stative verbs",t:"Know, believe, want, need, own and many uses of like generally describe states: I know the answer, not I am knowing the answer."},{h:"Context matters",t:"A present time word alone does not always mean continuous; right now usually signals an action in progress."}],
+      examples:[{en:"The museum [opens] at ten tomorrow.",why:"A fixed schedule can refer to the future.",p:"حال ساده برای ساعت‌های ثابت و اعلام‌شدهٔ آینده به کار می‌رود."},{en:"I [take] the metro to work.",why:"This describes a routine, not just today's journey.",p:"این جمله عادت رفت‌وآمد را نشان می‌دهد."},{en:"I [need] a pen right now.",why:"Need is usually stative, even with right now.",p:"فعل نیازداشتن معمولاً حالت را نشان می‌دهد، نه فعالیت در جریان."},{en:"She [owns] a small bookshop.",why:"Own expresses possession, a state.",p:"فعل مالک‌بودن در اینجا وضعیت نسبتاً ثابتی را بیان می‌کند."}],
+      tip:"A time reference to the future does not automatically require will: fixed schedules can use the Simple Present.",p:"برای برنامهٔ ثابت از حال ساده و برای بسیاری از کارهای موقتی یا در حال انجام از حال استمراری استفاده می‌کنیم. فعل‌های بیانگر حالت معمولاً به شکل ساده به کار می‌روند." },
+    { title:"Pronunciation, common errors and a quick checklist", tag:"Sound and accuracy", summary:"Master the sounds of -s and check the subject, verb and question structure before you finish a sentence.", formula:"/s/: works   |   /z/: lives   |   /ɪz/: watches",
+      rules:[{h:"Three pronunciations of -s/-es",t:"/s/ after a voiceless sound such as /k/: works. /z/ after a voiced sound: lives. /ɪz/ after a sibilant sound: watches."},{h:"Avoid double marking",t:"Correct: Does he know? She doesn't speak Italian. Incorrect: Does he knows? She doesn't speaks Italian."},{h:"Use the right auxiliary",t:"Correct: Are you ready? / Do you study? Incorrect: Do you are ready? / Are you study?"},{h:"A simple four-step check",t:"1. Identify the subject. 2. Decide: be or main verb? 3. Choose positive, negative or question. 4. Check the third-person ending and time meaning."}],
+      examples:[{en:"She [washes] her hands before lunch.",why:"Wash ends in /ʃ/, so the ending is pronounced /ɪz/.",p:"پسوند سوم‌شخص در این فعل یک هجای جداگانه دارد."},{en:"He [works] in a hospital.",why:"The final -s has a /s/ sound after /k/.",p:"پس از صدای بی‌واک «ک»، پسوند مانند «س» تلفظ می‌شود."},{en:"My father [drives] to work.",why:"The -s sounds /z/ after the voiced sound /v/.",p:"پس از صدای واک‌دار «و»، نشانهٔ سوم‌شخص مانند «ز» تلفظ می‌شود."},{en:"[Does] she [know] the answer?",why:"Only does carries third-person agreement in this question.",p:"در پرسش، داز نشانهٔ سوم‌شخص را دارد؛ پس فعل اصلی ساده می‌آید."}],
+      tip:"Quick recap: base verb, third-person -s, don't/doesn't, do/does questions, and am/is/are for be.",p:"برای کنترل درستی جمله، اول فاعل را پیدا کنید، سپس نوع فعل و ساختار جمله را مشخص کنید. در پایان پسوند سوم‌شخص و تناسب زمان را بررسی کنید." }
+  ];
+
+  const PRACTICE = [
+    {level:"A2",mode:"choose",task:"Choose the correct verb.",prompt:"My sister _____ to school by bus.",options:["go","goes","going","is go"],answer:"goes",explain:"My sister is third-person singular, so go becomes goes.",p:"خواهر من سوم‌شخص مفرد است؛ بنابراین فعل گو به گوز تبدیل می‌شود."},
+    {level:"A2",mode:"gap",task:"Type the missing verb form.",prompt:"We _____ (study) English on Tuesdays.",answer:"study",explain:"We takes the base form study.",p:"با فاعل «ما»، شکل سادهٔ فعل را به کار می‌بریم."},
+    {level:"A2",mode:"fix",task:"Replace the incorrect word.",prompt:"He [play] football every weekend. Replace: play",answer:"plays",explain:"He needs the third-person ending: plays.",p:"فاعل سوم‌شخص مفرد است؛ پس فعل باید نشانهٔ سوم‌شخص بگیرد."},
+    {level:"A2",mode:"build",task:"Put the tiles in order to make a correct sentence.",prompt:"Make a negative sentence about liking spicy food.",tokens:["doesn't","food","spicy","She","like"],answer:["She","doesn't","like","spicy","food"],explain:"Use doesn't + the base verb like for she.",p:"پس از دازنت، فعل لایک به شکل ساده می‌آید."},
+    {level:"A2",mode:"choose",task:"Choose the correct short answer.",prompt:"Does Nima speak German? — Yes, _____.",options:["he do","he does","he is","he speaks"],answer:"he does",explain:"A question with does takes the short answer Yes, he does.",p:"برای پاسخ کوتاه مثبت به پرسشی با داز، از «بله، او داز» استفاده می‌کنیم."},
+    {level:"A2",mode:"gap",task:"Type one missing word.",prompt:"They _____ not watch TV before school.",answer:"do",explain:"They takes do not + the base verb.",p:"فاعل جمع است؛ بنابراین برای منفی‌کردن از دو نات استفاده می‌کنیم."},
+    {level:"A2",mode:"build",task:"Put the tiles in the correct question order.",prompt:"Ask if she lives nearby.",tokens:["nearby","she","Does","live"],answer:["Does","she","live","nearby"],explain:"A question about she starts with Does, and live stays in its base form.",p:"برای پرسش با سوم‌شخص مفرد، داز پیش از فاعل می‌آید و فعل ساده می‌ماند."},
+    {level:"A2",mode:"choose",task:"Choose the correct be form.",prompt:"The students _____ tired after class.",options:["is","are","am","be"],answer:"are",explain:"Students is plural, so use are.",p:"چون دانش‌آموزان جمع هستند، از آر استفاده می‌کنیم."},
+    {level:"A2",mode:"fix",task:"Replace the incorrect word.",prompt:"Mina doesn't [likes] tea. Replace: likes",answer:"like",explain:"After doesn't, the main verb must be in its base form.",p:"بعد از دازنت، فعل اصلی بدون پسوند سوم‌شخص می‌آید."},
+
+    {level:"B1",mode:"choose",task:"Choose the natural word order.",prompt:"Which sentence is correct?",options:["He drinks usually tea.","He usually drinks tea.","He drinks tea usually always.","Usually he drinks tea always."],answer:"He usually drinks tea.",explain:"Usually normally appears before the main verb drinks.",p:"قید تکرار معمولاً پیش از فعل اصلی قرار می‌گیرد."},
+    {level:"B1",mode:"gap",task:"Type the correct third-person verb form.",prompt:"My brother _____ (try) to call us every Sunday.",answer:"tries",explain:"Try ends in consonant + y, so it becomes tries.",p:"وقتی پیش از وای حرف بی‌صدا باشد، در سوم‌شخص مفرد وای به آی‌ئی‌اس تغییر می‌کند."},
+    {level:"B1",mode:"build",task:"Arrange the words into a natural sentence.",prompt:"Describe how frequently Sara is late.",tokens:["late","is","Sara","rarely"],answer:["Sara","is","rarely","late"],explain:"With be, the frequency adverb comes after is.",p:"قید تکرار پس از فعل ایز قرار می‌گیرد."},
+    {level:"B1",mode:"choose",task:"Choose the correct question.",prompt:"Ask about Leila's workplace.",options:["Where Leila works?","Where does Leila works?","Where does Leila work?","Where do Leila work?"],answer:"Where does Leila work?",explain:"With third-person singular, use where + does + subject + base verb.",p:"در پرسش با سوم‌شخص مفرد، پس از داز فعل اصلی ساده می‌آید."},
+    {level:"B1",mode:"fix",task:"Replace the incorrect word.",prompt:"She [go] to the gym twice a week. Replace: go",answer:"goes",explain:"Go takes -es in third-person singular.",p:"فعل گو در سوم‌شخص مفرد پسوند ای‌اس می‌گیرد."},
+    {level:"B1",mode:"gap",task:"Type one missing auxiliary.",prompt:"How often _____ your neighbours have parties?",answer:"do",explain:"Neighbours is plural; use do in the question.",p:"چون همسایه‌ها جمع هستند، فعل کمکی دو لازم است."},
+    {level:"B1",mode:"choose",task:"Choose the correct scheduled-event sentence.",prompt:"Which sentence uses the Simple Present correctly for a timetable?",options:["The flight leaves at 7 tomorrow.","The flight leave at 7 tomorrow.","The flight does leaves at 7 tomorrow.","The flight leaving at 7 tomorrow."],answer:"The flight leaves at 7 tomorrow.",explain:"The Simple Present describes fixed timetables, including future departures.",p:"برای بیان ساعت حرکتِ قطعی و برنامه‌ریزی‌شده در آینده از حال ساده استفاده می‌کنیم."},
+    {level:"B1",mode:"build",task:"Build the subject question.",prompt:"Ask which person teaches mathematics.",tokens:["mathematics","Who","teaches"],answer:["Who","teaches","mathematics"],explain:"Who is the subject, so no does is needed.",p:"چون هو نقش فاعل دارد، فعل کمکی داز لازم نیست."},
+    {level:"B1",mode:"fix",task:"Replace the incorrect word.",prompt:"Are they [works] here? Replace: works",answer:"working",explain:"With are, the -ing form expresses an activity in progress: Are they working here? For a general job question, say Do they work here.",p:"بعد از آر در ساختار حال استمراری، شکل آی‌اِن‌جی فعل می‌آید. برای پرسش دربارهٔ شغل معمول از دو استفاده می‌کنیم."},
+
+    {level:"B2",mode:"choose",task:"Choose the correct subject question.",prompt:"You want to know the person responsible for the decision.",options:["Who does makes this decision?","Who makes this decision?","Who do make this decision?","Who is make this decision?"],answer:"Who makes this decision?",explain:"Who is the subject of the verb makes. No do/does is required.",p:"وقتی هو فاعل جمله است، فعل اصلی سوم‌شخص مفرد می‌آید و فعل کمکی لازم نیست."},
+    {level:"B2",mode:"gap",task:"Type one appropriate verb form.",prompt:"The data _____ (suggest) a change in customer habits.",answer:"suggest",explain:"In formal English, data is often treated as plural, so suggest is natural here.",p:"در نوشتار رسمی، دیتا اغلب جمع در نظر گرفته می‌شود و فعل بدون پسوند سوم‌شخص می‌آید."},
+    {level:"B2",mode:"build",task:"Build a natural negative sentence.",prompt:"Describe her usual commuting choice.",tokens:["usually","take","She","doesn't","the","bus"],answer:["She","doesn't","usually","take","the","bus"],alt:["She usually doesn't take the bus"],explain:"With doesn't, usually often follows the auxiliary before the base verb.",p:"در جملهٔ منفی، یوجوئِلی معمولاً بعد از دازنت و پیش از فعل اصلی قرار می‌گیرد."},
+    {level:"B2",mode:"choose",task:"Choose the best Simple Present form.",prompt:"I _____ the answer, but I can't explain it yet.",options:["am knowing","know","knows","do knowing"],answer:"know",explain:"Know is a stative verb, normally used in the Simple Present for this meaning.",p:"فعل دانستن معمولاً بیانگر حالت است و در این معنا به شکل حال ساده به کار می‌رود."},
+    {level:"B2",mode:"fix",task:"Replace the incorrect word.",prompt:"The committee [meet] every second Thursday. Replace: meet",answer:"meets",explain:"When committee is treated as one unit (common in American English), use meets.",p:"وقتی کمیته را یک مجموعهٔ واحد بدانیم، فعل سوم‌شخص مفرد می‌آید."},
+    {level:"B2",mode:"gap",task:"Type the missing verb form.",prompt:"Every one of these reports _____ (contain) useful details.",answer:"contains",explain:"The subject is every one (singular), not reports (plural).",p:"فاعل اصلی «هر یک» مفرد است، نه اسم جمعی که پس از آن آمده است."},
+    {level:"B2",mode:"choose",task:"Choose the most accurate sentence.",prompt:"Describe a regular habit without an unnecessary double negative.",options:["I don't never miss breakfast.","I never miss breakfast.","I doesn't never miss breakfast.","I never misses breakfast."],answer:"I never miss breakfast.",explain:"Never already expresses negation. Do not add don't in standard English.",p:"قید نِوِر خودش معنای منفی دارد؛ بنابراین در انگلیسی معیار دونت را همراه آن نمی‌آوریم."},
+    {level:"B2",mode:"build",task:"Put the words in a correct object question.",prompt:"Ask which person the director trusts.",tokens:["trust","does","Who","the","director"],answer:["Who","does","the","director","trust"],explain:"The director is the subject and who is the object: who + does + subject + base verb.",p:"در این پرسش، کارگردان فاعل و هو مفعول است؛ پس ساختار معمول پرسشی با داز لازم است."},
+    {level:"B2",mode:"fix",task:"Replace the incorrect word.",prompt:"What [do] this word mean? Replace: do",answer:"does",explain:"This word is a singular subject, so use does: What does this word mean?",p:"عبارت «این واژه» مفرد است؛ بنابراین باید از داز استفاده کنیم."}
+  ];
+
+  const FINAL_TEST = [
+    {level:"A2",mode:"choose",task:"Choose the correct completion.",prompt:"Tom _____ his teeth every morning.",options:["brush","brushes","brushing","does brushes"],answer:"brushes",explain:"Tom is third-person singular; brush ends in -sh, so add -es.",p:"برای سوم‌شخص مفرد، فعل‌هایی که به ش ختم می‌شوند ای‌اس می‌گیرند."},
+    {level:"A2",mode:"gap",task:"Type one missing word.",prompt:"I _____ live near the school. (negative auxiliary)",answer:"don't",alt:["do not"],explain:"I uses don't (or do not) with a base verb.",p:"برای منفی‌کردن جمله با «من»، از دونت استفاده می‌کنیم."},
+    {level:"A2",mode:"build",task:"Arrange the words to form a question.",prompt:"Ask about the dog's sleeping place.",tokens:["sleep","the","Where","dog","does"],answer:["Where","does","the","dog","sleep"],explain:"Dog is singular: where + does + the dog + base verb.",p:"برای فاعل مفرد، داز می‌آید و فعل اصلی ساده باقی می‌ماند."},
+    {level:"A2",mode:"fix",task:"Replace the incorrect word.",prompt:"She [have] a new bicycle. Replace: have",answer:"has",explain:"Have becomes has for she.",p:"فعل داشتن در سوم‌شخص مفرد به شکل هَز درمی‌آید."},
+    {level:"A2",mode:"choose",task:"Choose the correct form of be.",prompt:"_____ your brother at home now?",options:["Do","Does","Is","Are"],answer:"Is",explain:"Questions with be invert is and the subject; do/does is not needed.",p:"برای پرسش با فعل بی، ایز را پیش از فاعل قرار می‌دهیم."},
+    {level:"A2",mode:"gap",task:"Type the correct verb form.",prompt:"These shops _____ (close) at nine.",answer:"close",explain:"Shops is plural, so use the base form close.",p:"چون فروشگاه‌ها جمع هستند، فعل بدون پسوند سوم‌شخص می‌آید."},
+    {level:"A2",mode:"choose",task:"Choose a correct short answer.",prompt:"Do your friends speak Arabic? — No, _____.",options:["they doesn't","they aren't","they don't","we don't"],answer:"they don't",explain:"For your friends (they), the correct short answer is No, they don't.",p:"برای فاعل جمع «آن‌ها»، پاسخ کوتاه منفی با دونت ساخته می‌شود."},
+    {level:"A2",mode:"fix",task:"Replace the incorrect word.",prompt:"He doesn't [watches] TV at night. Replace: watches",answer:"watch",explain:"Doesn't is already marked for third-person singular; use watch.",p:"پس از دازنت، فعل اصلی به شکل ساده می‌آید."},
+
+    {level:"B1",mode:"choose",task:"Choose the correctly placed frequency adverb.",prompt:"Which sentence sounds natural?",options:["He is always calm.","He always is calm.","He calm is always.","Always he calm is."],answer:"He is always calm.",explain:"Adverbs of frequency typically follow be.",p:"قید تکرار معمولاً پس از فعل بی قرار می‌گیرد."},
+    {level:"B1",mode:"gap",task:"Type the correct verb form.",prompt:"Sara _____ (carry) a notebook to every lesson.",answer:"carries",explain:"Carry ends in consonant + y, so use carries.",p:"در فعل‌هایی با حرف بی‌صدا و وای، وای به آی‌ئی‌اس تبدیل می‌شود."},
+    {level:"B1",mode:"build",task:"Make a negative sentence with a frequency adverb.",prompt:"Describe what you do not often do.",tokens:["eat","don't","I","often","late"],answer:["I","don't","often","eat","late"],explain:"The frequency adverb can follow don't: I don't often eat late.",p:"در جملهٔ منفی، قید تکرار می‌تواند بعد از دونت قرار بگیرد."},
+    {level:"B1",mode:"choose",task:"Choose the correct information question.",prompt:"Ask about the time the library opens.",options:["What time does the library open?","What time the library opens?","What time does the library opens?","What time do the library open?"],answer:"What time does the library open?",explain:"Library is singular; use does + the base verb open.",p:"در پرسش با فاعل مفرد، داز و سپس شکل سادهٔ فعل می‌آید."},
+    {level:"B1",mode:"gap",task:"Type the correct auxiliary.",prompt:"_____ your sister work on Saturdays?",answer:"Does",explain:"Your sister is singular, so start with Does.",p:"خواهر شما سوم‌شخص مفرد است؛ پرسش با داز آغاز می‌شود."},
+    {level:"B1",mode:"fix",task:"Replace the incorrect word.",prompt:"The match [start] at five tomorrow. Replace: start",answer:"starts",explain:"A timetable takes the Simple Present, and the singular subject needs starts.",p:"برنامهٔ زمانی ثابت با حال ساده بیان می‌شود و فاعل مفرد نشانهٔ سوم‌شخص می‌گیرد."},
+    {level:"B1",mode:"build",task:"Build a subject question.",prompt:"Ask what causes the noise.",tokens:["the","What","noise","causes"],answer:["What","causes","the","noise"],explain:"What is the subject of causes; no auxiliary is required.",p:"چون وات فاعل پرسش است، فعل کمکی دو یا داز لازم نیست."},
+    {level:"B1",mode:"choose",task:"Choose the sentence about a repeated routine.",prompt:"Which sentence describes a habitual activity?",options:["Maya is reading right now.","Maya reads before bed every night.","Maya was reading at noon.","Maya will be reading soon."],answer:"Maya reads before bed every night.",explain:"Every night shows regular repetition, a core use of the Simple Present.",p:"عبارت «هر شب» نشان‌دهندهٔ تکرار منظم کار است."},
+
+    {level:"B2",mode:"choose",task:"Choose the best sentence for a general state.",prompt:"Which sentence expresses possession naturally?",options:["He is owning three cafés.","He does owns three cafés.","He owns three cafés.","He own three cafés."],answer:"He owns three cafés.",explain:"Own is generally a stative verb; use the Simple Present here.",p:"فعل مالک‌بودن معمولاً بیانگر حالت است و در این جمله به شکل حال ساده می‌آید."},
+    {level:"B2",mode:"gap",task:"Type the correct third-person form.",prompt:"Neither of the two solutions _____ (seem) practical.",answer:"seems",explain:"In standard formal usage, neither of the two solutions has singular agreement: seems.",p:"در کاربرد رسمی، فاعل نایذِر معمولاً مفرد در نظر گرفته می‌شود."},
+    {level:"B2",mode:"build",task:"Make a question about the object.",prompt:"Ask which person the professor advises.",tokens:["professor","the","advise","does","Who"],answer:["Who","does","the","professor","advise"],explain:"The professor is the subject, so who + does + subject + base verb.",p:"چون استاد فاعل و هو مفعول است، فعل کمکی داز لازم می‌شود."},
+    {level:"B2",mode:"choose",task:"Choose the natural fixed-schedule sentence.",prompt:"An official itinerary lists a departure at 6:15 tomorrow.",options:["Our train leave at 6:15 tomorrow.","Our train leaves at 6:15 tomorrow.","Our train does leaves at 6:15 tomorrow.","Our train leaving at 6:15 tomorrow."],answer:"Our train leaves at 6:15 tomorrow.",explain:"The Simple Present is natural for an official timetable, including future events.",p:"برای زمان‌بندی رسمیِ آینده از حال ساده استفاده می‌شود."},
+    {level:"B2",mode:"fix",task:"Replace the incorrect word.",prompt:"Every student in these classes [have] an ID card. Replace: have",answer:"has",explain:"Every student is singular, even though classes is plural.",p:"فاعل اصلی اِوری استیودِنت مفرد است؛ اسم جمع بعدی روی فعل اثر نمی‌گذارد."},
+    {level:"B2",mode:"gap",task:"Type the missing auxiliary.",prompt:"Why _____ the manager rarely approve changes?",answer:"does",explain:"The manager is singular; use does + the base verb approve.",p:"مدیر فاعل مفرد است؛ بنابراین در پرسش از داز استفاده می‌کنیم."},
+    {level:"B2",mode:"choose",task:"Choose the sentence without a double negative.",prompt:"Which is correct in standard English?",options:["They don't never arrive early.","They never arrive early.","They never arrives early.","They doesn't never arrive early."],answer:"They never arrive early.",explain:"Never already has negative meaning; with they use the base form arrive.",p:"نِوِر به‌تنهایی معنای منفی دارد و با فاعل جمع فعل ساده می‌آید."},
+    {level:"B2",mode:"build",task:"Build a natural negative sentence.",prompt:"Describe a habit involving your colleague.",tokens:["usually","not","does","My","complain","colleague"],answer:["My","colleague","does","not","usually","complain"],alt:["My colleague usually does not complain"],explain:"Does not + usually + base verb is a natural standard sequence.",p:"در ساختار منفی، داز نات و سپس قید تکرار و شکل سادهٔ فعل می‌آید."}
+  ];
+  /* ===== END QUESTIONS ===== */
+
+  const STORAGE_KEY = "lwh-simple-present-masterclass-best";
+  const PREFS_KEY = "lwh-simple-present-prefs";
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const escapeHtml = text => String(text).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
+  const markup = text => escapeHtml(text).replace(/\[([^\]]+)\]/g,"<mark>$1</mark>");
+  const shuffle = array => {const copy=[...array];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;};
+  const normalize = input => String(input).toLowerCase().replace(/[’‘]/g,"'").replace(/[?.!,;:]/g, "").replace(/\s+/g," ").trim();
+  const answerText = item => Array.isArray(item.answer) ? item.answer.join(" ") : item.answer;
+  const isCorrect = (item,guess) => [answerText(item),...(item.alt||[])].some(answer=>normalize(answer)===normalize(guess));
+  const persianHtml = (value,cls="") => value ? `<p class="persian ${cls}" dir="rtl" lang="fa">${escapeHtml(value)}</p>` : "";
+  const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const splitPrompt = item => {const match=item.mode==="fix"&&item.prompt.match(/^(.*?)\s*Replace:\s*(.+)$/);return match?{text:match[1],replace:match[2]}:{text:item.prompt,replace:null};};
+  const percent = (part,whole) => whole ? Math.round(part*100/whole) : 0;
+
+  const MODES = {
+    choose:{name:"Multiple choice",help:n=>`Pick one option, or press 1–${n} on your keyboard.`},
+    gap:{name:"Fill the gap",help:()=>"Type the missing word, then press Enter."},
+    fix:{name:"Fix the error",help:()=>"Type only the corrected word, not the whole sentence."},
+    build:{name:"Build the sentence",help:()=>"Tap the words in order. Tap a placed word, or press Backspace, to take it back."}
+  };
+  const LEVELS = [
+    {id:"A2",badge:"A2",title:"Foundations",desc:"Habits, affirmative forms, negatives and basic questions."},
+    {id:"B1",badge:"B1",title:"Building accuracy",desc:"Adverbs, wh-questions, subject questions and schedules."},
+    {id:"B2",badge:"B2",title:"Finer distinctions",desc:"Stative verbs, word order and less obvious uses."},
+    {id:"ALL",badge:"★",title:"All levels",desc:"The complete A2–B2 question bank, shuffled."}
+  ];
+  const EXAMPLE_COUNT = LESSONS.reduce((sum,topic)=>sum+topic.examples.length,0);
+  const PRAISE = ["Correct!","Well done!","Exactly right!","Nice work!","Spot on!"];
+  const SUN = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>`;
+  const MOON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>`;
+
+  /* ----- Storage: falls back to memory when the browser blocks localStorage ----- */
+  const memory = {};
+  function load(key){try{const raw=localStorage.getItem(key);if(raw!==null){const value=JSON.parse(raw);if(value&&typeof value==="object"&&!Array.isArray(value))return value;}}catch(_){/* Storage may be blocked. */}return memory[key]||{};}
+  function store(key,value){memory[key]=value;try{localStorage.setItem(key,JSON.stringify(value));}catch(_){/* Storage may be blocked. */}}
+  const progress = () => load(STORAGE_KEY);
+  const saveProgress = patch => store(STORAGE_KEY,{...progress(),...patch});
+  function bestTest(){const data=progress();return Number.isFinite(data.percent)?data:null;}
+  function saveTestBest(result){const old=progress();if(!Number.isFinite(old.percent)||result.percent>old.percent)saveProgress(result);}
+  function levelBest(level){const score=progress().levels?.[level];return Number.isFinite(score)?score:null;}
+  function saveLevelBest(level,pct){const levels={...(progress().levels||{})};levels[level]=Math.max(levels[level]??0,pct);saveProgress({levels});}
+  function readTopics(){const read=progress().read;return new Set(Array.isArray(read)?read.filter(i=>Number.isInteger(i)&&i>=0&&i<LESSONS.length):[]);}
+
+  let screen = "lesson", routedHash = null, activeTopic = 0, exampleFilter = -1, exampleQuery = "", lastTest = null;
+  const openExamples = new Set();
+  const sessions = {practice:null,test:null};
+  const desktop = window.matchMedia("(min-width: 861px)");
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  {const last=progress().lastTopic;if(Number.isInteger(last)&&last>=0&&last<LESSONS.length)activeTopic=last;}
+
+  /* ----- Preferences ----- */
+  const isDark = () => (document.documentElement.dataset.theme||(darkQuery.matches?"dark":"light"))==="dark";
+  function applyPrefs(){
+    const prefs=load(PREFS_KEY),root=document.documentElement;
+    if(prefs.theme==="light"||prefs.theme==="dark")root.dataset.theme=prefs.theme;else delete root.dataset.theme;
+    const showFa=prefs.fa!==false;
+    document.body.classList.toggle("hide-fa",!showFa);
+    $("#faToggle").setAttribute("aria-pressed",String(showFa));
+    $("#faToggle").title=showFa?"Hide Persian notes":"Show Persian notes";
+    $("#themeToggle").innerHTML=isDark()?SUN:MOON;
+    const themeLabel=isDark()?"Switch to light theme":"Switch to dark theme";
+    $("#themeToggle").title=themeLabel;$("#themeToggle").setAttribute("aria-label",themeLabel);
+  }
+  $("#themeToggle").addEventListener("click",()=>{store(PREFS_KEY,{...load(PREFS_KEY),theme:isDark()?"light":"dark"});applyPrefs();});
+  $("#faToggle").addEventListener("click",()=>{const prefs=load(PREFS_KEY);store(PREFS_KEY,{...prefs,fa:prefs.fa===false});applyPrefs();});
+  darkQuery.addEventListener("change",applyPrefs);
+
+  /* ----- Routing (#lesson/3, #examples, #practice, #test, #results) ----- */
+  function go(hash){location.hash=hash;route();}
+  function route(){
+    routedHash=location.hash;
+    const [name,arg]=location.hash.slice(1).split("/");
+    let target=["lesson","examples","practice","test","results"].includes(name)?name:"lesson";
+    if(target==="results"&&!lastTest)target="test";
+    if(target==="lesson"&&arg){const n=Number(arg)-1;if(Number.isInteger(n)&&n>=0&&n<LESSONS.length)activeTopic=n;}
+    screen=target;
+    for(const name of ["lesson","examples","practice","test","results"])$(`#${name}Screen`).hidden=name!==target;
+    const step=target==="results"?"test":target;
+    $$("#path [data-nav]").forEach(link=>{const on=link.dataset.nav===step;link.classList.toggle("active",on);if(on)link.setAttribute("aria-current","page");else link.removeAttribute("aria-current");});
+    if(target==="lesson")renderLesson();
+    if(target==="examples")renderExamples();
+    if(target==="practice")renderPractice();
+    if(target==="test")renderTest();
+    updateSteps();
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+  window.addEventListener("hashchange",()=>{if(location.hash!==routedHash)route();});
+
+  function updateSteps(){
+    const read=readTopics().size,practice=sessions.practice,test=sessions.test,best=bestTest();
+    const levelBests=LEVELS.map(level=>levelBest(level.id)).filter(score=>score!==null);
+    $("#stepLesson").textContent=`${read}/${LESSONS.length} topics read`;
+    $("#stepExamples").textContent=`${EXAMPLE_COUNT} sentences`;
+    $("#stepPractice").textContent=practice&&!practice.done?`In progress · ${practice.index+1}/${practice.items.length}`:levelBests.length?`Best ${Math.max(...levelBests)}%`:`${PRACTICE.length} activities`;
+    $("#stepTest").textContent=test?`In progress · ${test.index+1}/${test.items.length}`:best?`Best ${best.percent}%`:`${FINAL_TEST.length} questions`;
+  }
+  function measureHeader(){document.documentElement.style.setProperty("--header-h",$(".appbar").offsetHeight+"px");}
+
+  /* ----- Lessons ----- */
+  function renderLesson(){
+    const read=readTopics();read.add(activeTopic);
+    saveProgress({read:[...read].sort((a,b)=>a-b),lastTopic:activeTopic});
+    const total=LESSONS.length,topic=LESSONS[activeTopic],prev=LESSONS[activeTopic-1],next=LESSONS[activeTopic+1];
+    $("#courseFacts").innerHTML=[[total,"Topics"],[EXAMPLE_COUNT,"Examples"],[PRACTICE.length,"Activities"],[FINAL_TEST.length,"Test questions"]].map(([n,label])=>`<span class="fact"><b>${n}</b>${label}</span>`).join("");
+    $("#topicList").innerHTML=LESSONS.map((t,i)=>`<li><a class="topic${i===activeTopic?" active":""}${read.has(i)?" read":""}" href="#lesson/${i+1}"${i===activeTopic?' aria-current="page"':""}><span class="topic-num" aria-hidden="true">${read.has(i)?"✓":i+1}</span><span>${escapeHtml(t.title)}</span></a></li>`).join("");
+    $("#tocCount").textContent=`${read.size} of ${total} read`;
+    $("#tocBar").style.width=`${percent(read.size,total)}%`;
+    if(!desktop.matches)$("#toc").open=false;
+    $("#lessonContent").innerHTML=`
+      <p class="eyebrow">Topic ${activeTopic+1} of ${total} · ${escapeHtml(topic.tag)}</p>
+      <h2 class="lesson-title">${escapeHtml(topic.title)}</h2>
+      <p class="lead">${escapeHtml(topic.summary)}</p>
+      <div class="formula" aria-label="Pattern">${topic.formula.split("|").map(part=>`<code>${escapeHtml(part.trim())}</code>`).join("")}</div>
+      <h3 class="section-title">The rules</h3>
+      <ol class="rules">${topic.rules.map(rule=>`<li><h4>${escapeHtml(rule.h)}</h4><p>${escapeHtml(rule.t)}</p></li>`).join("")}</ol>
+      <h3 class="section-title">Examples</h3>
+      <ul class="examples">${topic.examples.map(ex=>`<li><p class="ex-en">${markup(ex.en)}</p><p class="ex-why">${escapeHtml(ex.why)}</p>${persianHtml(ex.p,"sm")}</li>`).join("")}</ul>
+      <aside class="tip"><span class="tip-icon" aria-hidden="true">!</span><div><strong>Remember</strong><p>${escapeHtml(topic.tip)}</p></div></aside>
+      ${topic.p?`<section class="fa-block persian" dir="rtl" lang="fa"><h4>توضیح فارسی</h4><p>${escapeHtml(topic.p)}</p></section>`:""}
+      <nav class="pager" aria-label="Topic navigation">
+        ${prev?`<a class="prev" href="#lesson/${activeTopic}"><small>← Previous topic</small><span>${escapeHtml(prev.title)}</span></a>`:""}
+        ${next?`<a class="next" href="#lesson/${activeTopic+2}"><small>Next topic →</small><span>${escapeHtml(next.title)}</span></a>`:`<a class="next cta" href="#examples"><small>Next step →</small><span>Study all ${EXAMPLE_COUNT} model sentences</span></a>`}
+      </nav>`;
+  }
+  $("#toc summary").addEventListener("click",event=>{if(desktop.matches)event.preventDefault();});
+  desktop.addEventListener("change",()=>{$("#toc").open=desktop.matches;});
+
+  /* ----- Examples ----- */
+  function visibleExamples(){
+    const query=normalize(exampleQuery);
+    return LESSONS.flatMap((topic,i)=>topic.examples.map((ex,j)=>({topic,i,j,ex,id:`${i}-${j}`})))
+      .filter(x=>(exampleFilter===-1||x.i===exampleFilter)&&(!query||normalize(`${x.ex.en.replace(/[[\]]/g,"")} ${x.ex.why} ${x.topic.tag} ${x.topic.title}`).includes(query)));
+  }
+  function exampleCard(x){
+    const open=openExamples.has(x.id);
+    return `<article class="ex-card${open?" open":""}"><button type="button" class="ex-toggle" data-id="${x.id}" aria-expanded="${open}"><span class="ex-topic">${String(x.i+1).padStart(2,"0")} · ${escapeHtml(x.topic.tag)}</span><span class="ex-sentence">${markup(x.ex.en)}</span><span class="ex-cue">${open?"Hide explanation ▴":"Why? ▾"}</span></button><div class="ex-reveal"${open?"":" hidden"}><p>${escapeHtml(x.ex.why)}</p>${persianHtml(x.ex.p,"sm")}</div></article>`;
+  }
+  function renderExamples(){
+    const shown=visibleExamples();
+    $("#exampleTabs").innerHTML=`<button type="button" class="chip" data-eg="-1" aria-pressed="${exampleFilter===-1}">All topics<small>${EXAMPLE_COUNT}</small></button>`+LESSONS.map((topic,i)=>`<button type="button" class="chip" data-eg="${i}" aria-pressed="${exampleFilter===i}" title="${escapeHtml(topic.title)}">${escapeHtml(topic.tag)}<small>${topic.examples.length}</small></button>`).join("");
+    $("#exampleGrid").innerHTML=shown.length?shown.map(exampleCard).join(""):`<p class="empty">No sentences match “${escapeHtml(exampleQuery)}”. Try another word or choose All topics.</p>`;
+    $("#exampleCount").textContent=`Showing ${shown.length} of ${EXAMPLE_COUNT} sentences`;
+    const allOpen=shown.length>0&&shown.every(x=>openExamples.has(x.id));
+    $("#toggleAll").textContent=allOpen?"Hide all explanations":"Show all explanations";
+    $("#toggleAll").disabled=!shown.length;
+  }
+  $("#exampleTabs").addEventListener("click",event=>{const chip=event.target.closest("[data-eg]");if(!chip)return;exampleFilter=Number(chip.dataset.eg);renderExamples();});
+  $("#exampleSearch").addEventListener("input",event=>{exampleQuery=event.target.value;renderExamples();});
+  $("#toggleAll").addEventListener("click",()=>{const shown=visibleExamples(),allOpen=shown.every(x=>openExamples.has(x.id));shown.forEach(x=>allOpen?openExamples.delete(x.id):openExamples.add(x.id));renderExamples();});
+  $("#exampleGrid").addEventListener("click",event=>{
+    const toggle=event.target.closest(".ex-toggle");if(!toggle)return;
+    const id=toggle.dataset.id,open=!openExamples.has(id);
+    if(open)openExamples.add(id);else openExamples.delete(id);
+    toggle.setAttribute("aria-expanded",String(open));
+    toggle.closest(".ex-card").classList.toggle("open",open);
+    toggle.nextElementSibling.hidden=!open;
+    $(".ex-cue",toggle).textContent=open?"Hide explanation ▴":"Why? ▾";
+    const shown=visibleExamples();
+    $("#toggleAll").textContent=shown.every(x=>openExamples.has(x.id))?"Hide all explanations":"Show all explanations";
+  });
+
+  /* ----- Practice and test screens ----- */
+  function renderPractice(){
+    const s=sessions.practice;
+    $("#practiceIntro").hidden=!!s;
+    $("#practiceWork").hidden=!s||s.done;
+    $("#practiceDone").hidden=!s||!s.done;
+    if(!s)$("#practiceLevels").innerHTML=LEVELS.map(level=>{
+      const count=PRACTICE.filter(item=>level.id==="ALL"||item.level===level.id).length,best=levelBest(level.id);
+      return `<button type="button" class="level-card" data-level="${level.id}"><span class="level-badge" aria-hidden="true">${level.badge}</span><span class="level-name">${level.id==="ALL"?"":level.id+" · "}${level.title}</span><span class="level-desc">${level.desc}</span><span class="level-foot"><span>${count} activities</span><span class="bar" aria-hidden="true"><i style="width:${best??0}%"></i></span><span>${best===null?"Not tried yet":`Best <b>${best}%</b>`}</span></span></button>`;
+    }).join("");
+  }
+  function renderTest(){
+    const s=sessions.test,best=bestTest(),types=new Set(FINAL_TEST.map(item=>item.mode)).size;
+    $("#testIntro").hidden=!!s;
+    $("#testWork").hidden=!s;
+    $("#testFacts").innerHTML=[[FINAL_TEST.length,"Questions"],["A2–B2","Three levels"],[types,"Question types"],[best?best.percent+"%":"—","Your best"]].map(([v,label])=>`<div class="stat"><b>${v}</b><span>${label}</span></div>`).join("");
+    $("#savedBest").textContent=best?`Best result on this device: ${best.percent}% (${best.correct}/${best.total} correct).`:"No previous test score saved on this device.";
+  }
+  $("#practiceLevels").addEventListener("click",event=>{const card=event.target.closest("[data-level]");if(card)startSession("practice",card.dataset.level);});
+  $("#startTest").addEventListener("click",()=>startSession("test"));
+
+  const holderFor = kind => $(kind==="practice"?"#practiceWork":"#testWork");
+  function startSession(kind,level="ALL"){
+    const source=kind==="test"?FINAL_TEST:PRACTICE;
+    sessions[kind]={kind,level,items:shuffle(source.filter(item=>level==="ALL"||item.level===level)),index:0,correct:0,streak:0,bestStreak:0,points:0,locked:false,guess:"",picked:[],options:[],tokens:[],records:[],done:false};
+    go(kind);
+    renderQuestion(sessions[kind]);
+  }
+  function renderQuestion(s){
+    const item=s.items[s.index],holder=holderFor(s.kind),n=s.items.length,i=s.index,isTest=s.kind==="test",last=i+1===n;
+    Object.assign(s,{locked:false,guess:"",picked:[],options:item.mode==="choose"?shuffle(item.options):[],tokens:item.mode==="build"?shuffle(item.tokens.map((word,id)=>({word,id}))):[]});
+    const {text,replace}=splitPrompt(item);
+    const help=replace?`The highlighted word is wrong. Type the correct word to replace “${escapeHtml(replace)}”.`:MODES[item.mode].help(s.options.length);
+    const stats=isTest?`<span class="pill">Question <b>${i+1}</b> of ${n}</span>`:`<span class="pill">Points <b data-points>${s.points}</b></span><span class="pill" title="Correct answers in a row">Streak <b data-streak>${s.streak}</b></span>`;
+    let answer;
+    if(item.mode==="choose")answer=`<div class="options" role="group" aria-label="Answer options">${s.options.map((option,k)=>`<button type="button" class="option" data-choice="${k}" aria-pressed="false"><kbd>${k+1}</kbd><span>${escapeHtml(option)}</span></button>`).join("")}</div>`;
+    else if(item.mode==="build")answer=`<div class="built" aria-label="Your sentence"></div><div class="bank" role="group" aria-label="Word tiles"></div><div class="build-tools"><button type="button" class="btn text sm" data-action="undo">Undo</button><button type="button" class="btn text sm" data-action="clear">Clear</button></div>`;
+    else answer=`<label class="sr-only" for="${s.kind}Answer">Your answer</label><input type="text" id="${s.kind}Answer" class="text-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="120" enterkeyhint="done" placeholder="Type your answer…">`;
+    holder.innerHTML=`<div class="session">
+      <div class="session-bar">
+        <div class="session-row"><span class="session-title">${isTest?"Final test":`Practice · ${s.level==="ALL"?"All levels":s.level}`}</span>${stats}<button type="button" class="btn text sm" data-action="quit">${isTest?"Exit test":"Quit"}</button></div>
+        <span class="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${i}"><i style="width:${percent(Math.max(0,i-1),n)}%"></i></span>
+      </div>
+      <article class="card question" tabindex="-1" aria-labelledby="${s.kind}Task">
+        <div class="q-meta"><span class="tag">${MODES[item.mode].name}</span><span class="tag level">${escapeHtml(item.level)}</span><span class="q-num">${i+1} / ${n}</span></div>
+        <h2 class="q-task" id="${s.kind}Task">${escapeHtml(item.task)}</h2>
+        <div class="prompt${item.mode==="fix"?" is-fix":""}">${markup(text)}</div>
+        <p class="q-help">${help}</p>
+        <div class="answer-space">${answer}</div>
+        <div class="feedback-slot" aria-live="polite"></div>
+        <div class="q-actions"><span class="q-status" aria-live="polite">${isTest?"Answers are revealed at the end.":""}</span><div class="row"><button type="button" class="btn primary" data-action="check">${isTest?(last?"Finish test":"Next question →"):"Check answer"}</button><button type="button" class="btn primary" data-action="next" hidden>${last?"See summary →":"Continue →"}</button></div></div>
+      </article>
+    </div>`;
+    requestAnimationFrame(()=>{const fill=$(".session-bar .bar i",holder);if(fill)fill.style.width=`${percent(i,n)}%`;});
+    if(item.mode==="build")renderTiles(s);
+    const top=holder.getBoundingClientRect().top+window.scrollY-$(".appbar").offsetHeight-12;
+    if(window.scrollY>top+4)window.scrollTo({top,behavior:reduceMotion()?"auto":"smooth"});
+    ($(".text-input",holder)||$(".question",holder)).focus({preventScroll:true});
+    updateSteps();
+  }
+  function selectOption(s,index){
+    if(s.locked)return;
+    s.guess=s.options[index];
+    $$(".option",holderFor(s.kind)).forEach((button,k)=>button.setAttribute("aria-pressed",String(k===index)));
+    setStatus(s,"");
+  }
+  function renderTiles(s){
+    const holder=holderFor(s.kind),used=new Set(s.picked),word=id=>escapeHtml(s.tokens.find(t=>t.id===id).word);
+    $(".built",holder).innerHTML=s.picked.length?s.picked.map(id=>`<button type="button" class="tile" data-remove="${id}" aria-label="Remove ${word(id)}">${word(id)}</button>`).join(""):`<span class="built-empty">Tap the words below to build your sentence…</span>`;
+    $(".bank",holder).innerHTML=s.tokens.map(t=>used.has(t.id)?`<span class="tile used" aria-hidden="true">${escapeHtml(t.word)}</span>`:`<button type="button" class="tile" data-add="${t.id}">${escapeHtml(t.word)}</button>`).join("");
+    $$('[data-action="undo"],[data-action="clear"]',holder).forEach(button=>button.disabled=s.locked||!s.picked.length);
+  }
+  function changeTiles(s,picked){
+    if(s.locked)return;
+    const holder=holderFor(s.kind),hadFocus=holder.contains(document.activeElement);
+    s.picked=picked;renderTiles(s);setStatus(s,"");
+    if(hadFocus&&!holder.contains(document.activeElement))($(".bank [data-add]",holder)||$('[data-action="check"]',holder)).focus({preventScroll:true});
+  }
+  function setStatus(s,message,warn=false){const status=$(".q-status",holderFor(s.kind));if(!status)return;status.textContent=message||(s.kind==="test"?"Answers are revealed at the end.":"");status.classList.toggle("warn",warn);}
+  function readGuess(s){
+    const item=s.items[s.index],holder=holderFor(s.kind);
+    if(item.mode==="choose")return s.guess;
+    if(item.mode==="build")return s.picked.map(id=>s.tokens.find(t=>t.id===id).word).join(" ");
+    return $(".text-input",holder).value.trim();
+  }
+  function submit(s){
+    if(s.locked)return;
+    const item=s.items[s.index],holder=holderFor(s.kind),guess=readGuess(s);
+    if(!guess){setStatus(s,item.mode==="choose"?"Choose an answer first.":item.mode==="build"?"Place some words first.":"Type an answer first.",true);const card=$(".question",holder);card.classList.remove("shake");void card.offsetWidth;card.classList.add("shake");return;}
+    const correct=isCorrect(item,guess);
+    s.locked=true;s.guess=guess;s.records.push({item,guess,correct});
+    if(correct){s.correct++;s.streak++;s.bestStreak=Math.max(s.bestStreak,s.streak);s.points+=10+Math.min(5,(s.streak-1)*2);}
+    else s.streak=0;
+    if(s.kind==="test"){next(s);return;}
+
+    const checkButton=$('[data-action="check"]',holder),nextButton=$('[data-action="next"]',holder);
+    if(correct)sparkle(checkButton);
+    $$(".answer-space button",holder).forEach(button=>button.disabled=true);
+    const input=$(".text-input",holder);
+    if(input){input.readOnly=true;input.classList.add(correct?"good":"bad");}
+    $(".built",holder)?.classList.add(correct?"good":"bad");
+    if(item.mode==="choose")$$(".option",holder).forEach(button=>{const value=s.options[Number(button.dataset.choice)];if(value===answerText(item))button.classList.add("good");else if(value===guess)button.classList.add("bad");});
+    $("[data-points]",holder).textContent=s.points;
+    $("[data-streak]",holder).textContent=s.streak;
+    const card=$(".question",holder);card.classList.remove("shake","pop");void card.offsetWidth;card.classList.add(correct?"pop":"shake");
+    $(".feedback-slot",holder).innerHTML=`<div class="feedback ${correct?"good":"bad"}"><div class="fb-head"><span class="fb-icon" aria-hidden="true">${correct?"✓":"✕"}</span><h3>${correct?PRAISE[Math.floor(Math.random()*PRAISE.length)]:"Not quite"}</h3>${correct&&s.streak>=3?`<span class="fb-streak">${s.streak} in a row</span>`:""}</div>${correct?"":`<p><strong>Correct answer:</strong> ${escapeHtml(answerText(item))}</p>`}<p>${escapeHtml(item.explain)}</p>${persianHtml(item.p,"sm")}</div>`;
+    setStatus(s,correct?"":"Read the explanation, then continue.");
+    checkButton.hidden=true;nextButton.hidden=false;nextButton.focus({preventScroll:true});
+    nextButton.scrollIntoView({block:"nearest",behavior:reduceMotion()?"auto":"smooth"});
+  }
+  function next(s){
+    if(!s.locked)return;
+    s.index++;
+    if(s.index<s.items.length){renderQuestion(s);return;}
+    if(s.kind==="practice"){s.done=true;saveLevelBest(s.level,percent(s.correct,s.items.length));renderPracticeDone(s);renderPractice();updateSteps();window.scrollTo({top:0,behavior:"instant"});}
+    else finishTest(s);
+  }
+  function quit(s){
+    if(s.records.length&&!confirm(s.kind==="test"?"Exit the test? Your answers so far will be lost.":"Quit this round? Your answers in this round won't be saved."))return;
+    sessions[s.kind]=null;
+    if(s.kind==="test")renderTest();else renderPractice();
+    updateSteps();window.scrollTo({top:0,behavior:"instant"});
+  }
+  ["practice","test"].forEach(kind=>{
+    const holder=holderFor(kind);
+    holder.addEventListener("click",event=>{
+      const s=sessions[kind],button=event.target.closest("button");
+      if(!s||!button||button.disabled)return;
+      if(button.dataset.choice!==undefined)selectOption(s,Number(button.dataset.choice));
+      else if(button.dataset.add!==undefined)changeTiles(s,[...s.picked,Number(button.dataset.add)]);
+      else if(button.dataset.remove!==undefined)changeTiles(s,s.picked.filter(id=>id!==Number(button.dataset.remove)));
+      else ({check:()=>submit(s),next:()=>next(s),quit:()=>quit(s),undo:()=>changeTiles(s,s.picked.slice(0,-1)),clear:()=>changeTiles(s,[])})[button.dataset.action]?.();
+    });
+    holder.addEventListener("keydown",event=>{
+      const s=sessions[kind];
+      if(s&&event.key==="Enter"&&event.target.matches(".text-input")){event.preventDefault();s.locked?next(s):submit(s);}
+    });
+    holder.addEventListener("input",event=>{const s=sessions[kind];if(s&&event.target.matches(".text-input"))setStatus(s,"");});
+  });
+  function sparkle(button){
+    if(reduceMotion()||!button)return;
+    const rect=button.getBoundingClientRect();
+    for(let i=0;i<12;i++){
+      const el=document.createElement("span"),theta=2*Math.PI*i/12,distance=40+Math.random()*36;
+      el.className="spark";el.style.left=`${rect.left+rect.width/2}px`;el.style.top=`${rect.top+rect.height/2}px`;
+      el.style.setProperty("--dx",`${Math.cos(theta)*distance}px`);el.style.setProperty("--dy",`${Math.sin(theta)*distance}px`);
+      document.body.append(el);setTimeout(()=>el.remove(),800);
+    }
+  }
+
+  /* ----- Summaries, review and results ----- */
+  function reviewItem(record,number){
+    const {text}=splitPrompt(record.item);
+    return `<article class="review-item ${record.correct?"is-right":"is-wrong"}"><div class="ri-head"><span>#${number}</span><span>·</span><span>${escapeHtml(record.item.task)}</span><span class="tag level">${escapeHtml(record.item.level)}</span></div><p class="ri-prompt${record.item.mode==="fix"?" is-fix":""}">${markup(text)}</p><div class="ri-answers"><p><span>Your answer</span><b class="${record.correct?"right":"wrong"}">${escapeHtml(record.guess)}</b></p>${record.correct?"":`<p><span>Correct</span><b class="right">${escapeHtml(answerText(record.item))}</b></p>`}</div><p class="ri-explain">${escapeHtml(record.item.explain)}</p>${persianHtml(record.item.p,"sm")}</article>`;
+  }
+  function reviewList(records,filter){
+    const list=records.map((record,i)=>({record,i})).filter(x=>filter==="all"||!x.record.correct);
+    return list.length?list.map(x=>reviewItem(x.record,x.i+1)).join(""):`<p class="empty">Every answer was correct. Nothing to revisit.</p>`;
+  }
+  function reviewBlock(records){
+    const missed=records.filter(record=>!record.correct).length,filter=missed?"missed":"all";
+    return `<section class="review"><div class="review-head"><h2>Review your answers</h2><div class="seg" role="group" aria-label="Which answers to show"><button type="button" data-review="missed" aria-pressed="${filter==="missed"}">Missed (${missed})</button><button type="button" data-review="all" aria-pressed="${filter==="all"}">All (${records.length})</button></div></div><div class="review-list">${reviewList(records,filter)}</div></section>`;
+  }
+  document.addEventListener("click",event=>{
+    const button=event.target.closest("[data-review]");if(!button)return;
+    const section=button.closest(".review"),records=section.closest("#resultsScreen")?lastTest?.records:sessions.practice?.records;
+    if(!records)return;
+    $$("[data-review]",section).forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+    $(".review-list",section).innerHTML=reviewList(records,button.dataset.review);
+  });
+  function renderPracticeDone(s){
+    const n=s.items.length,pct=percent(s.correct,n);
+    $("#practiceDone").innerHTML=`<article class="card summary">
+      <div class="summary-head"><p class="eyebrow">Practice complete · ${s.level==="ALL"?"All levels":s.level}</p><h1>${pct===100?"A perfect round!":pct>=70?"Great work!":"Good effort. Keep going!"}</h1><p class="lead">You answered ${s.correct} of ${n} correctly and earned ${s.points} points.</p></div>
+      <div class="stats"><div class="stat"><b>${s.correct}/${n}</b><span>Correct</span></div><div class="stat"><b>${pct}%</b><span>Score</span></div><div class="stat"><b>${s.bestStreak}</b><span>Best streak</span></div><div class="stat"><b>${s.points}</b><span>Points</span></div></div>
+      <div class="row center"><button type="button" class="btn secondary" data-action="retry">Try this level again</button><button type="button" class="btn secondary" data-action="levels">Change level</button><a class="btn primary" href="#test">Take the final test →</a></div>
+      ${reviewBlock(s.records)}
+    </article>`;
+  }
+  $("#practiceDone").addEventListener("click",event=>{
+    const action=event.target.closest("[data-action]")?.dataset.action,s=sessions.practice;
+    if(action==="retry"&&s)startSession("practice",s.level);
+    if(action==="levels"){sessions.practice=null;renderPractice();updateSteps();window.scrollTo({top:0,behavior:"instant"});}
+  });
+  function rankFor(pct){return pct>=90?"Simple Present Master":pct>=70?"Grammar Specialist":pct>=50?"Confident Builder":"Curious Beginner";}
+  function finishTest(s){
+    const total=s.items.length,pct=percent(s.correct,total),previous=bestTest();
+    lastTest={records:[...s.records],total,correct:s.correct,pct,newBest:!previous||pct>previous.percent};
+    saveTestBest({percent:pct,correct:s.correct,total,date:new Date().toISOString()});
+    sessions.test=null;
+    renderResults();
+    go("results");
+    animateScore(pct);
+  }
+  function renderResults(){
+    const {records,total,correct,pct,newBest}=lastTest,best=bestTest();
+    const levels=["A2","B1","B2"].map(level=>{const list=records.filter(r=>r.item.level===level);return {level,n:list.length,c:list.filter(r=>r.correct).length};}).filter(x=>x.n);
+    const weakest=[...levels].sort((a,b)=>a.c/a.n-b.c/b.n)[0];
+    const summary=pct===100?"Flawless! You have mastered these Simple Present patterns.":pct>=70?"Strong work. Review the items below to sharpen your accuracy.":"You have a useful starting point. Study the explanations, then try again.";
+    $("#resultsScreen").innerHTML=`<article class="card summary">
+      <div class="summary-head">
+        <p class="eyebrow">Your final result</p>
+        <div class="ring"><svg viewBox="0 0 180 180" width="170" height="170" aria-hidden="true"><circle class="ring-track" cx="90" cy="90" r="70"/><circle class="ring-fill" cx="90" cy="90" r="70"/></svg><div class="ring-value" role="img" aria-label="Score: ${pct} percent"><span data-score>0</span><small>%</small></div></div>
+        <h1>${rankFor(pct)}</h1><p class="lead">${summary}</p>
+      </div>
+      <div class="stats"><div class="stat"><b>${correct}/${total}</b><span>Correct</span></div><div class="stat"><b>${total-correct}</b><span>To review</span></div><div class="stat"><b>${pct}%</b><span>Score</span></div><div class="stat"><b>${best?best.percent+"%":"—"}</b><span>${newBest?"New best!":"Best score"}</span></div></div>
+      <h2 class="section-title">Score by level</h2>
+      <div class="breakdown">${levels.map(x=>`<div class="bd-row"><span class="tag level">${x.level}</span><span class="bar" aria-hidden="true"><i style="width:${percent(x.c,x.n)}%"></i></span><span class="bd-score">${x.c} / ${x.n}</span></div>`).join("")}</div>
+      ${weakest&&weakest.c<weakest.n?`<div class="advice"><p>Your weakest level was <strong>${weakest.level}</strong> (${weakest.c} of ${weakest.n}). A focused practice round will help.</p><button type="button" class="btn secondary sm" data-action="practise" data-level="${weakest.level}">Practise ${weakest.level} →</button></div>`:""}
+      <div class="row center summary-actions"><button type="button" class="btn primary" data-action="retake">Retake the test</button><a class="btn secondary" href="#practice">Practise more</a><a class="btn secondary" href="#lesson">Review lessons</a></div>
+      ${reviewBlock(records)}
+    </article>`;
+  }
+  function animateScore(pct){
+    const ring=$("#resultsScreen .ring-fill"),value=$("#resultsScreen [data-score]"),target=String(440*(1-pct/100));
+    if(reduceMotion()){ring.style.strokeDashoffset=target;value.textContent=pct;return;}
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ring.style.strokeDashoffset=target;}));
+    const start=performance.now();
+    (function tick(now){const t=Math.min(1,(now-start)/1000);value.textContent=Math.round(pct*(1-Math.pow(1-t,3)));if(t<1)requestAnimationFrame(tick);})(start);
+  }
+  $("#resultsScreen").addEventListener("click",event=>{
+    const button=event.target.closest("[data-action]");if(!button)return;
+    if(button.dataset.action==="retake")startSession("test");
+    if(button.dataset.action==="practise")startSession("practice",button.dataset.level);
+  });
+
+  /* ----- Keyboard shortcuts ----- */
+  document.addEventListener("keydown",event=>{
+    if(event.altKey||event.ctrlKey||event.metaKey)return;
+    const el=document.activeElement,tag=el?.tagName;
+    if(tag==="INPUT"||tag==="TEXTAREA")return;
+    if(screen==="lesson"&&(event.key==="ArrowLeft"||event.key==="ArrowRight")){
+      const target=activeTopic+(event.key==="ArrowRight"?1:-1);
+      if(target>=0&&target<LESSONS.length){event.preventDefault();go(`lesson/${target+1}`);}
+      return;
+    }
+    const s=(screen==="practice"||screen==="test")&&sessions[screen];
+    if(!s||s.done)return;
+    const item=s.items[s.index];
+    if(event.key==="Enter"){
+      const onSelectedOption=el?.matches?.('[data-choice][aria-pressed="true"]');
+      if((tag==="BUTTON"||tag==="A")&&!onSelectedOption)return;
+      event.preventDefault();s.locked?next(s):submit(s);return;
+    }
+    if(s.locked)return;
+    if(item.mode==="choose"&&/^[1-9]$/.test(event.key)&&Number(event.key)<=s.options.length){event.preventDefault();selectOption(s,Number(event.key)-1);}
+    else if(item.mode==="build"&&event.key==="Backspace"&&s.picked.length){event.preventDefault();changeTiles(s,s.picked.slice(0,-1));}
+  });
+  window.addEventListener("beforeunload",event=>{if(sessions.test?.records.length){event.preventDefault();event.returnValue="";}});
+  window.addEventListener("resize",measureHeader);
+
+  applyPrefs();
+  measureHeader();
+  route();
+  </script>
+</body>
+</html>
